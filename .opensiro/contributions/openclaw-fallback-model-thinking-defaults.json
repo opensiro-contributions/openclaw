@@ -4,7 +4,7 @@
   "original_repository": "openclaw/openclaw",
   "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
   "work_state": "BUILD",
-  "next_action": "Review PR https://github.com/opensiro-contributions/openclaw/pull/1 is OPEN but still targets opensiro/review-base-147509 instead of fork main; complete source-native integration/TypeScript verification and source-drift review. Prepare exact source-template review-gated disclosure and obtain separate current-conversation consent before changing this public fork-local PR. External PR not published.",
+  "next_action": "Review https://github.com/opensiro-contributions/openclaw/pull/1 (OPEN, head fdd5c435, base main b81742c8, 2 commits/6 files). Fork PR #2 closed unmerged as duplicate. Additional typecheck/full CI and original-source drift checks are outstanding. Do not merge fork-local PR; separately approve exact external publication to openclaw/openclaw.",
   "source_revision": "b81742c8bfb591847601678178ff824336fc73eb",
   "native_evidence": [
     "https://github.com/opensiro-contributions/openclaw/pull/1",
@@ -14,5 +14,5 @@
     "https://github.com/opensiro-contributions/openclaw/tree/opensiro/upgrade-fallback-thinking-147509"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T134846Z--fallback-review-pr-reconciliation"
+  "last_event_id": "20261116T135903Z--openclaw-fallback-fork-pr-reconciled"
 }
