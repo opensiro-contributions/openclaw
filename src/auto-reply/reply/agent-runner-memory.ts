@@ -62,7 +62,7 @@ import { buildRunEntrySelection } from "./agent-runner-run-params.js";
 import {
   buildEmbeddedRunExecutionParams,
   buildModelResolveContext,
-  resolveRunThinkingLevelForFallbackCandidate,
+  resolveRunThinkingSelectionForFallbackCandidate,
 } from "./agent-runner-utils.js";
 import {
   resolveCompactionCompletionNotice,
@@ -773,7 +773,7 @@ export async function runMemoryFlushIfNeeded(
       abortSignal: deferredLifecycle.signal,
       runCandidate: async (provider, model, runOptions) => {
         const sessionRuntimeOverride = runOptions.agentHarnessRuntimeOverride;
-        const candidateThinkLevel = resolveRunThinkingLevelForFallbackCandidate({
+        const candidateThinking = resolveRunThinkingSelectionForFallbackCandidate({
           cfg: params.cfg,
           provider,
           modelId: model,
@@ -787,7 +787,7 @@ export async function runMemoryFlushIfNeeded(
         const runBaseParams = await buildEmbeddedRunExecutionParams({
           run: {
             ...maintenanceRun,
-            thinkLevel: candidateThinkLevel,
+            thinkLevel: candidateThinking.level,
           },
           sessionCtx: {},
           hasRepliedRef: undefined,

@@ -352,6 +352,56 @@ describe("executeAgentTurn: run lifecycle and ownership", () => {
     },
   );
 
+  it("runs a fallback model at its own configured effort without a false clamp notice", async () => {
+    const followupRun = createFollowupRun({
+      provider: "openai",
+      model: "gpt-5.6-sol",
+      thinkLevel: "medium",
+      thinkingCatalog: [
+        { provider: "openai", id: "gpt-5.6-sol", reasoning: true },
+        { provider: "anthropic", id: "claude-sonnet-4-6", reasoning: true },
+      ],
+      config: {
+        agents: {
+          defaults: {
+            models: {
+              "openai/gpt-5.6-sol": {
+                params: { thinking: "medium" },
+                agentRuntime: { id: "openclaw" },
+              },
+              "anthropic/claude-sonnet-4-6": {
+                params: { thinking: "high" },
+                agentRuntime: { id: "openclaw" },
+              },
+            },
+          },
+        },
+      },
+    });
+    state.runWithModelFallbackMock.mockImplementationOnce(async (params: FallbackRunnerParams) => {
+      await params.run("openai", "gpt-5.6-sol", initialFallbackAttemptOptions(params));
+      return runFallbackCandidate(
+        params,
+        "anthropic",
+        "claude-sonnet-4-6",
+        fallbackAttemptOptions(params, "unknown"),
+      );
+    });
+    state.runEmbeddedAgentMock.mockResolvedValue(createRunResult("ok"));
+
+    const result = await execute({ followupRun });
+
+    expect(state.runEmbeddedAgentMock.mock.calls.map((call) => call[0]?.thinkLevel)).toEqual([
+      "medium",
+      "high",
+    ]);
+    expect(followupRun.run.thinkLevel).toBe("medium");
+    if (result.kind !== "success") {
+      throw new Error("Expected a successful fallback");
+    }
+    expect(result.runResult.meta.requestShaping?.thinkingClamp).toBeUndefined();
+  });
+
   it("freezes abort ownership only after model fallback settles", async () => {
     const { replyOperation, freezeAbortMock } = createMockReplyOperation();
     const followupRun = createFollowupRun();

@@ -9,6 +9,8 @@ import {
   prepareModelRunCapabilities,
   type PreparedModelThinkingCapability,
 } from "../../agents/model-catalog-lookup.js";
+import { resolveModelExtraParamSources } from "../../agents/model-extra-params.js";
+import { resolveConfiguredThinkingDefault } from "../../agents/model-thinking-default.js";
 import {
   normalizeThinkingCatalogProviders,
   resolveCandidateThinkingLevel,
@@ -185,21 +187,47 @@ export function resolveFollowupCurrentMessageId(queued: FollowupRun): string | u
     : queued.messageId;
 }
 
-/** Remaps the original inline request without reusing a queued model's clamped level. */
-export function resolveRunThinkingLevelForFallbackCandidate(
-  params: Omit<Parameters<typeof resolveCandidateThinkingLevel>[0], "level"> & {
+/** Keep explicit turn/session thinking while honoring a fallback model's own configured default. */
+export function resolveRunThinkingSelectionForFallbackCandidate(
+  params: Omit<Parameters<typeof resolveCandidateThinkingLevel>[0], "level" | "sessionEntry"> & {
+    sessionEntry?: Pick<SessionEntry, "agentHarnessId" | "agentRuntimeOverride" | "thinkingLevel">;
     run: FollowupRun["run"];
   },
 ) {
   const { run, ...candidate } = params;
-  return resolveCandidateThinkingLevel({
-    ...candidate,
-    // Reset and inherited choices already resolved defaults when this turn was admitted.
-    level:
-      run.thinkLevelOverride === "default"
-        ? run.thinkLevel
-        : (run.thinkLevelOverride ?? run.thinkLevel),
-  });
+  let requestedLevel =
+    run.thinkLevelOverride === "default"
+      ? run.thinkLevel
+      : (run.thinkLevelOverride ?? run.thinkLevel);
+
+  // Only an explicitly configured candidate model changes the inherited level.
+  // Session and inline overrides remain turn-wide. /think default clears those overrides.
+  if (
+    (run.thinkLevelOverride === undefined || run.thinkLevelOverride === "default") &&
+    (run.thinkLevelOverride === "default" || !candidate.sessionEntry?.thinkingLevel)
+  ) {
+    const cfg = candidate.cfg ?? run.config;
+    const { modelParams, agentModelParams } = resolveModelExtraParamSources({
+      config: cfg,
+      provider: candidate.provider,
+      modelId: candidate.modelId,
+      agentId: run.agentId,
+    });
+    if ((agentModelParams?.thinking ?? modelParams?.thinking) !== undefined) {
+      requestedLevel =
+        resolveConfiguredThinkingDefault({
+          cfg,
+          provider: candidate.provider,
+          model: candidate.modelId,
+          agentId: run.agentId,
+        }) ?? requestedLevel;
+    }
+  }
+
+  return {
+    requestedLevel,
+    level: resolveCandidateThinkingLevel({ ...candidate, level: requestedLevel }),
+  };
 }
 
 export function resolveRunFastModeForFallbackCandidate(params: {
