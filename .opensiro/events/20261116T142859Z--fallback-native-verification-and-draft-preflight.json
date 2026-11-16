@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "20261116T142859Z--fallback-native-verification-and-draft-preflight",
+  "recorded_at": "2026-11-16T14:28:59Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed OpenClaw native validation)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "UNIT_16_OF_16_PASS_INTEGRATION_1_OF_1_PASS_LINT_FORMAT_PASS_DRAFT_STRUCTURAL_PREFLIGHT_PASS",
+  "evidence_urls": [
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro-contributions/openclaw/blob/4b3e3aea5c44a93899dab2677c294838e396df4d/src/auto-reply/reply/agent-runner-utils.test.ts",
+    "https://github.com/opensiro-contributions/openclaw/blob/4b3e3aea5c44a93899dab2677c294838e396df4d/src/auto-reply/reply/agent-runner-execution-lifecycle.test.ts",
+    "https://github.com/opensiro-contributions/openclaw/commit/4b3e3aea5c44a93899dab2677c294838e396df4d"
+  ],
+  "next_action": "NATIVE RECHECK (2026-11-16): corrected clamp test plus 15 other unit tests = 16/16 PASS; focused fallback lifecycle integration = 1 PASS, 15 skipped; five TypeScript-file Oxlint 0 errors/warnings, six-file Oxfmt and git diff --check PASS. Proposed 3-commit/6-file +201/-17 fork-local PR update prepared with source link preflight PASS; public PR #1 still head fdd5c435 (not updated). Full TypeScript project check and broad CI unverified; original main 13 commits ahead of b81742c8 as last checked; source-refresh and test compatibility due before external publication. Exact-current-conversation consent required before modifying the public fork-local PR #1 or submitting any PR to openclaw/openclaw. Do not merge fork-local PR."
+}
