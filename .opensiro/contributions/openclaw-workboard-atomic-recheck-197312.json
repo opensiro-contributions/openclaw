@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "openclaw-workboard-atomic-recheck-197312",
   "original_repository": "openclaw/openclaw",
   "legacy_sources": [],
   "title": "Workboard fail-closed re-check dependency handoff",
   "work_state": "BUILD",
-  "next_action": "Code and three focused native store cases validated. Additional targeted tool test and full store/tools suite were terminated without a verdict. Prepare exact fork-local PR proposal for owner consent; do not publish fork-local or third-party PR without separate approval.",
+  "next_action": "OWNER STOP: do not create or update a public fork-local or third-party PR. Correct and validate all five source-bound links, current PR body and capability-delta receipt; require a new exact owner publication consent after review. Broad native tests remain incomplete.",
   "source_revision": "04d4d08d6a002c4aa2122a3735a8bdffb43ec7ca",
   "native_evidence": [
     "https://github.com/openclaw/openclaw/issues/197312",
@@ -17,14 +17,28 @@
     "opensiro/upgrade-workboard-197312-recheck"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T144229548Z--workboard-recheck-validated-handoff",
+  "last_event_id": "20261116T152950550Z--workboard-publication-hold-context-correction",
   "contribution_type": "ASSESSMENT_INFORMED",
-  "improvement_origin": "ASSESSMENT_INFORMED",
   "assessment_relationship": "The dated prior OpenClaw Index review informs the S2 coordination hypothesis; the user/operator need originated independently in original OpenClaw issue #197312, so not ASSESSMENT_DERIVED.",
   "validation_summary": {
     "baseline": "Vitest src/store.test.ts focused RED: 1 failure, expected verdict todo but actual ready, on unmodified source 30e95e42.",
     "implemented": "Vitest src/store.test.ts 3 focused PASS including positive, invalid dependency and legacy compatibility.",
     "quality": "oxfmt --check PASS; oxlint 0 warnings and 0 errors; git diff --check PASS.",
     "not_validated": "Broad store+tools Vitest suite terminated without verdict; additional focused tools.test.ts run terminated without verdict; no actual external fleet run."
-  }
+  },
+  "classification_rationale": "OpenClaw #197312 supplied the observed agent coordination need. The independently earlier dated Index assessment supplies S2 coordination and S3 control context, not a verified Index-first prediction or causal derivation.",
+  "classification_evidence": [
+    "https://github.com/openclaw/openclaw/issues/197312",
+    "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md"
+  ],
+  "assessment_pin": {
+    "url": "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md",
+    "reviewed_at": "2026-09-16",
+    "assessed_source_revision": "387da5edaa9d6c6cfcfc15e167fe2e46d8647d86"
+  },
+  "handoff_publication_hold": true,
+  "fork_local_pr_status": "NOT_CREATED",
+  "fork_local_review_pr": null,
+  "implementation_commit_sha": "f2910bab241e5a8d495c28a3d4d97835802437e9",
+  "product_base_sha": "04d4d08d6a002c4aa2122a3735a8bdffb43ec7ca"
 }

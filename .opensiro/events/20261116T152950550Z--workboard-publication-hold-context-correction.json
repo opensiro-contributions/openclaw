@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261116T152950550Z--workboard-publication-hold-context-correction",
+  "recorded_at": "2026-11-16T15:29:50.550Z",
+  "actor": "OpenSiro operator decision via authorized agent",
+  "kind": "DECISION",
+  "contribution_id": "openclaw-workboard-atomic-recheck-197312",
+  "decision": "HOLD_PUBLICATION_AND_REPAIR_CONTEXT",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/197312",
+    "https://github.com/opensiro-contributions/openclaw/commit/f2910bab241e5a8d495c28a3d4d97835802437e9",
+    "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md"
+  ],
+  "next_action": "OWNER STOP: do not create or update a public fork-local or third-party PR. Correct and validate all five source-bound links, current PR body and capability-delta receipt; require a new exact owner publication consent after review. Broad native tests remain incomplete."
+}
