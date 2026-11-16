@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "openclaw-fallback-model-thinking-defaults",
   "original_repository": "openclaw/openclaw",
   "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
@@ -18,7 +18,7 @@
     "https://github.com/opensiro-contributions/openclaw/tree/opensiro/fallback-thinking-147509-fixture-review"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T143844Z--fallback-maintainer-decision-watch",
+  "last_event_id": "20261116T153539Z--openclaw-source-issue-watch-registered",
   "contribution_type": "GENERAL_UPSTREAM",
   "classification_rationale": "The original OpenClaw feature request #147509 documents fallback-specific thinking defaults as the source-native demand. A prior general VSM assessment exists but no pinned pre-request Index-first prediction has been verified as the causal source of this specific improvement.",
   "classification_evidence": [
@@ -30,5 +30,44 @@
     "reviewed_at": "2026-09-16",
     "assessed_source_revision": "387da5edaa9d6c6cfcfc15e167fe2e46d8647d86",
     "relationship": "CONTEXT_ONLY_NOT_CAUSAL"
+  },
+  "issue_watch": {
+    "schema_version": 1,
+    "issue_url": "https://github.com/openclaw/openclaw/issues/147509",
+    "anchor_comment_url": "https://github.com/openclaw/openclaw/issues/147509#issuecomment-6919296247",
+    "expected_decisions": [
+      "May fallback candidates use their own thinking defaults rather than inheriting a primary model level?",
+      "Will maintainers permit a new source-repository code PR for the reviewed fix?"
+    ],
+    "relevant_labels": [
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:no-new-fix-pr"
+    ],
+    "baseline": {
+      "state": "open",
+      "labels": [
+        "P2",
+        "clawsweeper:fix-shape-clear",
+        "clawsweeper:needs-maintainer-review",
+        "clawsweeper:needs-product-decision",
+        "clawsweeper:no-new-fix-pr",
+        "clawsweeper:source-repro",
+        "enhancement",
+        "impact:auth-provider",
+        "issue-rating: 🦞 diamond lobster"
+      ],
+      "last_comment_id": 6919296247,
+      "observed_at": "2026-11-16T15:35:39Z"
+    },
+    "last_alert_fingerprint": null,
+    "last_observation": {
+      "status": "UNCHANGED",
+      "checked_at": "2026-11-16T15:35:39Z",
+      "evidence_urls": [
+        "https://github.com/openclaw/openclaw/issues/147509",
+        "https://github.com/openclaw/openclaw/issues/147509#issuecomment-6919296247"
+      ]
+    }
   }
 }

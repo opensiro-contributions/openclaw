@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "20261116T153539Z--openclaw-source-issue-watch-registered",
+  "recorded_at": "2026-11-16T15:35:39Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed)",
+  "kind": "DECISION",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "SOURCE_ISSUE_WATCH_REGISTERED",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/openclaw/openclaw/issues/147509#issuecomment-6919296247",
+    "https://github.com/opensiro/upstream/issues/22"
+  ],
+  "previous_record_sha": "32ce6bd3ce79b5084dcbeb83a33e5c1b0956a347",
+  "meta_parent_sha": "6af2cff839f162eb3fc15aae601bd3539eff12dd",
+  "next_action": "Observe the original issue for new maintainer decisions; no source PR/comment or publication is approved."
+}
