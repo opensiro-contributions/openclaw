@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "20261116T160744402Z--workboard-fork-local-review-pr-3",
+  "recorded_at": "2026-11-16T16:07:44.402Z",
+  "actor": "OpenSiro agent under explicit owner approval",
+  "kind": "PUBLICATION_CHECKPOINT",
+  "contribution_id": "openclaw-workboard-atomic-recheck-197312",
+  "decision": "PUBLISH_FORK_LOCAL_REVIEW_PR_ONLY",
+  "evidence_urls": [
+    "https://github.com/opensiro-contributions/openclaw/pull/3",
+    "https://github.com/opensiro-contributions/openclaw/commit/f2910bab241e5a8d495c28a3d4d97835802437e9"
+  ],
+  "next_action": "Owner explicitly approved and published fork-local review PR #3 only. Review exact scoped Workboard change and finish missing tool-level/broad native validation. Maintainer product decision remains open. No third-party OpenClaw PR/comment/edit authorized; require new exact consent for every further public action."
+}
