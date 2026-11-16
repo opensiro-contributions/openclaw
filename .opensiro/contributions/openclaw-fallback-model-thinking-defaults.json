@@ -16,5 +16,17 @@
     "https://github.com/opensiro-contributions/openclaw/tree/opensiro/fallback-thinking-147509-fixture-review"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T141038Z--fallback-fixture-16-tests-pass"
+  "last_event_id": "20261116T142239Z--fallback-contribution-origin-classification",
+  "contribution_type": "GENERAL_UPSTREAM",
+  "classification_rationale": "The original OpenClaw feature request #147509 documents fallback-specific thinking defaults as the source-native demand. A prior general VSM assessment exists but no pinned pre-request Index-first prediction has been verified as the causal source of this specific improvement.",
+  "classification_evidence": [
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/opensiro-contributions/openclaw/pull/1"
+  ],
+  "assessment_context": {
+    "url": "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md",
+    "reviewed_at": "2026-09-16",
+    "assessed_source_revision": "387da5edaa9d6c6cfcfc15e167fe2e46d8647d86",
+    "relationship": "CONTEXT_ONLY_NOT_CAUSAL"
+  }
 }

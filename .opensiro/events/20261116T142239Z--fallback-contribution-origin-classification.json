@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261116T142239Z--fallback-contribution-origin-classification",
+  "recorded_at": "2026-11-16T14:22:39Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed upstream upgrade continuation)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "CLASSIFY_GENERAL_UPSTREAM_WITH_NONCAUSAL_INDEX_CONTEXT",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md",
+    "https://github.com/opensiro-contributions/openclaw/pull/1"
+  ],
+  "next_action": "Retain schema v1 for compatibility with current Upstream aggregate; classify from original issue and pinned Index assessment context only. Await exact-action consent before updating public fork-local PR #1; review source drift and validation without publication."
+}
