@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261116T141038Z--fallback-fixture-16-tests-pass",
+  "recorded_at": "2026-11-16T14:10:38Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed OpenClaw correction)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "ONE_FILE_TEST_FIX_STAGED_WITH_FOCUSED_16_OF_16_NATIVE_PASS",
+  "evidence_urls": [
+    "https://github.com/opensiro-contributions/openclaw/commit/4b3e3aea5c44a93899dab2677c294838e396df4d",
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro/vsm-harness-index/blob/854c6e5441709b014c01f803c23311fdf366a354/assessments/op/openclaw.md"
+  ],
+  "next_action": "Fork-local PR https://github.com/opensiro-contributions/openclaw/pull/1 remains the single public review proposal (head fdd5c435, base main b81742c8). Corrected high-only Claude Sonnet 4.6 clamp fixture staged separately at https://github.com/opensiro-contributions/openclaw/commit/4b3e3aea5c44a93899dab2677c294838e396df4d; native focused Vitest full suite 16/16 PASS and focused 1/1 PASS, Oxlint/format/whitespace PASS on local matching blob. Apply that validated one-file change to PR #1 only after exact current-conversation consent for the public update, then refresh source drift, recheck integration/TypeScript/CI. Verify and correct PR disclosure to cite pinned OpenClaw Index assessment without claiming causality. External PR not published."
+}

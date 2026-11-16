@@ -4,15 +4,17 @@
   "original_repository": "openclaw/openclaw",
   "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
   "work_state": "BUILD",
-  "next_action": "Review https://github.com/opensiro-contributions/openclaw/pull/1 (OPEN, head fdd5c435, base main b81742c8, 2 commits/6 files). Fork PR #2 closed unmerged as duplicate. Additional typecheck/full CI and original-source drift checks are outstanding. Do not merge fork-local PR; separately approve exact external publication to openclaw/openclaw.",
+  "next_action": "Fork-local PR https://github.com/opensiro-contributions/openclaw/pull/1 remains the single public review proposal (head fdd5c435, base main b81742c8). Corrected high-only Claude Sonnet 4.6 clamp fixture staged separately at https://github.com/opensiro-contributions/openclaw/commit/4b3e3aea5c44a93899dab2677c294838e396df4d; native focused Vitest full suite 16/16 PASS and focused 1/1 PASS, Oxlint/format/whitespace PASS on local matching blob. Apply that validated one-file change to PR #1 only after exact current-conversation consent for the public update, then refresh source drift, recheck integration/TypeScript/CI. Verify and correct PR disclosure to cite pinned OpenClaw Index assessment without claiming causality. External PR not published.",
   "source_revision": "b81742c8bfb591847601678178ff824336fc73eb",
   "native_evidence": [
     "https://github.com/opensiro-contributions/openclaw/pull/1",
-    "https://github.com/opensiro-contributions/openclaw/commit/fdd5c435bd22303634e9e5a25aef559e22f65c10"
+    "https://github.com/opensiro-contributions/openclaw/commit/fdd5c435bd22303634e9e5a25aef559e22f65c10",
+    "https://github.com/opensiro-contributions/openclaw/commit/4b3e3aea5c44a93899dab2677c294838e396df4d"
   ],
   "work_branches": [
-    "https://github.com/opensiro-contributions/openclaw/tree/opensiro/upgrade-fallback-thinking-147509"
+    "https://github.com/opensiro-contributions/openclaw/tree/opensiro/upgrade-fallback-thinking-147509",
+    "https://github.com/opensiro-contributions/openclaw/tree/opensiro/fallback-thinking-147509-fixture-review"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T135903Z--openclaw-fallback-fork-pr-reconciled"
+  "last_event_id": "20261116T141038Z--fallback-fixture-16-tests-pass"
 }
