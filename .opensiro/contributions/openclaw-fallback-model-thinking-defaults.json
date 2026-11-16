@@ -4,7 +4,7 @@
   "original_repository": "openclaw/openclaw",
   "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
   "work_state": "BUILD",
-  "next_action": "NATIVE RECHECK (2026-11-16): corrected clamp test plus 15 other unit tests = 16/16 PASS; focused fallback lifecycle integration = 1 PASS, 15 skipped; five TypeScript-file Oxlint 0 errors/warnings, six-file Oxfmt and git diff --check PASS. Proposed 3-commit/6-file +201/-17 fork-local PR update prepared with source link preflight PASS; public PR #1 still head fdd5c435 (not updated). Full TypeScript project check and broad CI unverified; original main 13 commits ahead of b81742c8 as last checked; source-refresh and test compatibility due before external publication. Exact-current-conversation consent required before modifying the public fork-local PR #1 or submitting any PR to openclaw/openclaw. Do not merge fork-local PR.",
+  "next_action": "AWAITING_MAINTAINER_DECISION (2026-11-16). Observe https://github.com/openclaw/openclaw/issues/147509 after our https://github.com/openclaw/openclaw/issues/147509#issuecomment-6919296247; baseline OPEN with needs-maintainer-review, needs-product-decision, no-new-fix-pr; 3 comments, last id 6919296247. Source maintainer product decision and external PR admission unresolved; record significant new comment/label/close as source-linked evidence. Upstream general issue watch tracked in https://github.com/opensiro/upstream/issues/22 (not yet implemented/scheduled). Keep fork ACTIVE, work_state BUILD and do not modify code PR #1 or publish external PR without exact per-action consent. Native checks/proposed corrected fixture remain documented in native_evidence and events.",
   "source_revision": "b81742c8bfb591847601678178ff824336fc73eb",
   "native_evidence": [
     "https://github.com/opensiro-contributions/openclaw/pull/1",
@@ -18,7 +18,7 @@
     "https://github.com/opensiro-contributions/openclaw/tree/opensiro/fallback-thinking-147509-fixture-review"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T142859Z--fallback-native-verification-and-draft-preflight",
+  "last_event_id": "20261116T143844Z--fallback-maintainer-decision-watch",
   "contribution_type": "GENERAL_UPSTREAM",
   "classification_rationale": "The original OpenClaw feature request #147509 documents fallback-specific thinking defaults as the source-native demand. A prior general VSM assessment exists but no pinned pre-request Index-first prediction has been verified as the causal source of this specific improvement.",
   "classification_evidence": [

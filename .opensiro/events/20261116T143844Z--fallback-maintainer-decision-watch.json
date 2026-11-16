@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "20261116T143844Z--fallback-maintainer-decision-watch",
+  "recorded_at": "2026-11-16T14:38:44Z",
+  "actor": "OpenSiro ChatGPT agent (owner-requested decision watch)",
+  "kind": "DECISION",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "AWAITING_MAINTAINER_DECISION",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/openclaw/openclaw/issues/147509#issuecomment-6919296247",
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro/upstream/issues/22"
+  ],
+  "next_action": "Observe new GitHub comments, maintainer product decision, relevant labels and closure on openclaw/openclaw#147509, relative to comment #6919296247. Treat unchanged/bot activity as non-approval; require exact owner consent before external PR, and do not alter fork-wide ACTIVE attention. Reusable issue-watching pending upstream #22."
+}
