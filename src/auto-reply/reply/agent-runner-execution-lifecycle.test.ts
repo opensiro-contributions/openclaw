@@ -358,8 +358,8 @@ describe("executeAgentTurn: run lifecycle and ownership", () => {
       model: "gpt-5.6-sol",
       thinkLevel: "medium",
       thinkingCatalog: [
-        { provider: "openai", id: "gpt-5.6-sol", reasoning: true },
-        { provider: "anthropic", id: "claude-sonnet-4-6", reasoning: true },
+        { provider: "openai", id: "gpt-5.6-sol", reasoning: true, input: ["text"] },
+        { provider: "anthropic", id: "claude-sonnet-4-6", reasoning: true, input: ["text"] },
       ],
       config: {
         agents: {
