@@ -265,6 +265,41 @@ export class WorkboardWorkflowStore extends WorkboardPromoteStore {
         throw new Error(`created card is not linked to this card: ${createdCardId}`);
       }
     }
+    // Link before completing the shared parent so dispatch cannot promote a
+    // downstream verdict between separate workboard_link and completion calls.
+    // This is a fail-closed ordered handoff, not multi-card ACID persistence.
+    let ensuredLink: { parent: string; child: string } | undefined;
+    if (input.ensureLinks !== undefined) {
+      if (!Array.isArray(input.ensureLinks) || input.ensureLinks.length > 1) {
+        throw new Error("ensureLinks must contain at most one dependency.");
+      }
+      const link: unknown = input.ensureLinks[0];
+      if (link !== undefined) {
+        if (
+          !isRecord(link) ||
+          Object.keys(link).some((key) => key !== "parent" && key !== "child")
+        ) {
+          throw new Error("ensureLinks entries must contain only parent and child.");
+        }
+        const parent = normalizeOptionalString(link.parent);
+        const child = normalizeOptionalString(link.child);
+        if (!parent || !child || parent === child) {
+          throw new Error("ensureLinks requires different non-empty parent and child ids.");
+        }
+        if (!createdCardIds.includes(parent)) {
+          throw new Error("ensured re-check parent must be listed in createdCardIds.");
+        }
+        const recheck = await this.requireCard(parent);
+        const downstream = await this.requireCard(child);
+        if (!cardParentIds(recheck).includes(existing.id)) {
+          throw new Error("ensured re-check must already depend on the completing card.");
+        }
+        if (!cardParentIds(downstream).includes(existing.id)) {
+          throw new Error("ensured downstream card must already depend on the completing card.");
+        }
+        ensuredLink = { parent, child };
+      }
+    }
     const summary = normalizeBoundedString(input.summary, undefined, 2000, "summary");
     const proofInput = isRecord(input.proof) ? input.proof : undefined;
     const proofId = normalizeBoundedString(input.proofId, undefined, 120, "proof id");
@@ -287,6 +322,13 @@ export class WorkboardWorkflowStore extends WorkboardPromoteStore {
       );
     }
     const claims = claimedBy ? buildCompletionClaims(existing, input.claims, claimedBy, now) : [];
+    // A rejected link must leave the completing card running and the
+    // downstream verdict blocked by its existing dependency.
+    if (ensuredLink) {
+      await this.linkCardsDirect(ensuredLink.parent, ensuredLink.child, now, {
+        scope: scope === null ? undefined : scope,
+      });
+    }
     const finished = finishRun(existing, "done", now);
     const metadata = clearDiagnostics(finished.metadata, ["missing_proof"]);
     const notifications = this.appendNotification(metadata, now, {

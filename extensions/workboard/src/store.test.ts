@@ -1549,6 +1549,88 @@ describe("WorkboardStore", () => {
     expect(await store.get(card.id)).toEqual(card);
   });
 
+  it("holds a verdict until an ensured re-check dependency completes", async () => {
+    const store = createStore();
+    const fix = await createCard(store, "Fix", { status: "running" });
+    const verdict = await createCard(store, "Verdict", { parents: [fix.id] });
+    const recheck = await createCard(store, "Re-check", { parents: [fix.id] });
+    const claimed = await store.claim(fix.id, { ownerId: "main", token: "fix-token" });
+
+    await store.complete(claimed.card.id, {
+      ownerId: "main",
+      token: "fix-token",
+      createdCardIds: [recheck.id],
+      ensureLinks: [{ parent: recheck.id, child: verdict.id }],
+    });
+
+    await store.dispatch();
+    expect((await store.get(verdict.id))?.status).toBe("todo");
+    expect((await store.get(recheck.id))?.status).toBe("ready");
+    expect((await store.get(verdict.id))?.metadata?.links).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ type: "parent", targetCardId: recheck.id }),
+      ]),
+    );
+
+    await store.complete(recheck.id, { summary: "Re-check passed." });
+    await store.dispatch();
+    expect((await store.get(verdict.id))?.status).toBe("ready");
+  });
+
+  it("rejects invalid ensured dependencies without completing or changing the verdict", async () => {
+    const store = createStore();
+    const fix = await createCard(store, "Fix", { status: "running" });
+    const verdict = await createCard(store, "Verdict", { parents: [fix.id] });
+    const recheck = await createCard(store, "Re-check", { parents: [fix.id] });
+    const unrelated = await createCard(store, "Unrelated");
+    const scope = { ownerId: "main", token: "fix-token" };
+    await store.claim(fix.id, scope);
+
+    await expectRejected(
+      store.complete(fix.id, {
+        ...scope,
+        createdCardIds: [recheck.id],
+        ensureLinks: [{ parent: recheck.id, child: unrelated.id }],
+      }),
+      /downstream card must already depend/,
+    );
+    await expectRejected(
+      store.complete(fix.id, {
+        ...scope,
+        createdCardIds: [recheck.id],
+        ensureLinks: [
+          { parent: recheck.id, child: verdict.id },
+          { parent: recheck.id, child: unrelated.id },
+        ],
+      }),
+      /at most one/,
+    );
+    await expectRejected(
+      store.complete(fix.id, {
+        ...scope,
+        createdCardIds: [],
+        ensureLinks: [{ parent: recheck.id, child: verdict.id }],
+      }),
+      /must be listed in createdCardIds/,
+    );
+
+    expect((await store.get(fix.id))?.status).toBe("running");
+    expect((await store.get(verdict.id))?.metadata?.links).not.toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ type: "parent", targetCardId: recheck.id }),
+      ]),
+    );
+  });
+
+  it("keeps legacy completion behavior when ensureLinks is omitted", async () => {
+    const store = createStore();
+    const fix = await createCard(store, "Legacy fix", { status: "running" });
+    const verdict = await createCard(store, "Legacy verdict", { parents: [fix.id] });
+    await store.complete(fix.id, { summary: "Old workflow." });
+    await store.dispatch();
+    expect((await store.get(verdict.id))?.status).toBe("ready");
+  });
+
   it("completes and blocks claimed cards with structured handoff metadata", async () => {
     const store = createStore();
     const card = await createCard(store, "Ship child", {

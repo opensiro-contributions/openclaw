@@ -470,6 +470,17 @@ time. If a later step fails, completed steps remain visible; Workboard reports t
 original error without rolling them back. Inspect the board before retrying, and
 repair missing links or remove unwanted partial cards as needed.
 
+For a re-check inserted between an active worker and its existing downstream
+verdict, the completing worker can use
+workboard_complete with createdCardIds containing the new re-check card and
+ensureLinks: [{ parent: "<re-check-id>", child: "<verdict-id>" }].
+Both the re-check and verdict must already depend on the completing card.
+Workboard validates the relationship, attaches the new dependency, and only
+then completes the original card. A rejected link leaves the original card
+unfinished, so dispatch cannot release the verdict early. This is a single-call,
+fail-closed ordered handoff; cross-card persistence is not a multi-row atomic
+transaction, and a crash between writes may require inspection and repair.
+
 Proof statuses are worker-reported outcomes, not independent verification. A `passed`
 entry means the worker reports that its command or check succeeded. Consumers that need
 an independent quality gate should inspect the attached command, URL, or artifact and
