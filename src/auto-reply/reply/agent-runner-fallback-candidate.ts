@@ -41,7 +41,7 @@ import {
   mintReplyMessageActionTurnCapability,
   resolveModelFallbackOptions,
   resolveRunFastModeForFallbackCandidate,
-  resolveRunThinkingLevelForFallbackCandidate,
+  resolveRunThinkingSelectionForFallbackCandidate,
 } from "./agent-runner-utils.js";
 import { hasBlockReplyDeliveryCustody } from "./block-reply-delivery.js";
 import { beginReplyOperationFinalizationWork } from "./reply-run-finalization-lease.js";
@@ -296,7 +296,7 @@ export async function runAgentFallbackCandidates(params: AgentFallbackCycleParam
             executionProvider: runtime.cliExecutionProvider,
           });
         }
-        const candidateThinkLevel = resolveRunThinkingLevelForFallbackCandidate({
+        const candidateThinking = resolveRunThinkingSelectionForFallbackCandidate({
           cfg: params.runtimeConfig,
           provider,
           modelId: model,
@@ -307,6 +307,7 @@ export async function runAgentFallbackCandidates(params: AgentFallbackCycleParam
           sessionEntry: params.liveModelSwitchRuntimeEntry ?? turn.getActiveSessionEntry(),
           agentRuntime: candidateAgentRuntime,
         });
+        const candidateThinkLevel = candidateThinking.level;
         const candidateFastMode = resolveRunFastModeForFallbackCandidate({
           run: candidateRun,
           config: params.runtimeConfig,
@@ -443,7 +444,7 @@ export async function runAgentFallbackCandidates(params: AgentFallbackCycleParam
           }
           const thinking = result.meta.requestShaping?.thinking ?? candidateThinkLevel;
           const thinkingClamp = formatThinkingLevelClampNotice({
-            requested: turn.followupRun.run.thinkLevel,
+            requested: candidateThinking.requestedLevel,
             effective: thinking,
             provider: result.meta.agentMeta?.provider ?? provider,
             model: result.meta.agentMeta?.model ?? model,

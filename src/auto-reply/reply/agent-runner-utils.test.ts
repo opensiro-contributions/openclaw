@@ -28,6 +28,7 @@ const {
   buildThreadingToolContext,
   buildEmbeddedRunExecutionParams,
   mintReplyMessageActionTurnCapability,
+  resolveRunThinkingSelectionForFallbackCandidate,
 } = await import("./agent-runner-utils.js");
 const {
   resolveCurrentPromptReaction,
@@ -86,6 +87,109 @@ describe("agent-runner-utils", () => {
     hoisted.getChannelPluginMock.mockReset();
     hoisted.isReasoningTagProviderMock.mockReset();
     hoisted.isReasoningTagProviderMock.mockReturnValue(false);
+  });
+
+  describe("candidate-specific fallback thinking", () => {
+    const candidateConfig = {
+      agents: {
+        defaults: {
+          models: {
+            "openai/gpt-6-astra": { params: { thinking: "medium" } },
+            "anthropic/claude-opus-5": { params: { thinking: "high" } },
+          },
+        },
+      },
+    };
+
+    function resolveFallback(
+      params: {
+        config?: FollowupRun["run"]["config"];
+        run?: Partial<FollowupRun["run"]>;
+        sessionThinkingLevel?: string;
+        candidateModelId?: string;
+      } = {},
+    ) {
+      const run = makeRun({
+        config: params.config ?? candidateConfig,
+        agentId: "agent-1",
+        provider: "openai",
+        model: "gpt-6-astra",
+        thinkLevel: "medium",
+        ...params.run,
+      });
+      const selection = resolveRunThinkingSelectionForFallbackCandidate({
+        cfg: run.config,
+        run,
+        provider: "anthropic",
+        modelId: params.candidateModelId ?? "claude-opus-5",
+        agentRuntime: "openclaw",
+        ...(params.sessionThinkingLevel
+          ? { sessionEntry: { thinkingLevel: params.sessionThinkingLevel } }
+          : {}),
+      });
+      return selection.level;
+    }
+
+    it("uses the candidate's configured model default instead of the primary's", () => {
+      expect(resolveFallback()).toBe("high");
+    });
+
+    it("clamps unsupported fallback model effort to its supported maximum", () => {
+      expect(
+        resolveFallback({
+          candidateModelId: "claude-sonnet-4-6",
+          config: {
+            agents: {
+              defaults: {
+                models: {
+                  ...candidateConfig.agents.defaults.models,
+                  "anthropic/claude-sonnet-4-6": { params: { thinking: "xhigh" } },
+                },
+              },
+            },
+          },
+        }),
+      ).toBe("high");
+    });
+
+    it("preserves an explicit turn /think setting", () => {
+      expect(resolveFallback({ run: { thinkLevelOverride: "low" } })).toBe("low");
+    });
+
+    it("preserves stored session thinking across the fallback", () => {
+      expect(
+        resolveFallback({
+          run: { thinkLevel: "low" },
+          sessionThinkingLevel: "low",
+        }),
+      ).toBe("low");
+    });
+
+    it("resolves the candidate's default after /think default", () => {
+      expect(resolveFallback({ run: { thinkLevelOverride: "default" } })).toBe("high");
+    });
+
+    it("keeps primary inheritance when no fallback model default exists", () => {
+      expect(
+        resolveFallback({
+          config: { agents: { defaults: { thinkingDefault: "medium" } } },
+        }),
+      ).toBe("medium");
+    });
+
+    it("keeps an agent-specific thinkingDefault ahead of the model default", () => {
+      expect(
+        resolveFallback({
+          config: {
+            agents: {
+              list: [{ id: "agent-1", thinkingDefault: "low" }],
+              defaults: candidateConfig.agents.defaults,
+            },
+          },
+          run: { thinkLevel: "low" },
+        }),
+      ).toBe("low");
+    });
   });
 
   describe("message action turn capabilities", () => {
