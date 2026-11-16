@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "20261116T135903Z--openclaw-fallback-fork-pr-reconciled",
+  "recorded_at": "2026-11-16T13:59:03Z",
+  "actor": "OpenSiro ChatGPT agent (user-directed fork-local review reconciliation)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "FORK_LOCAL_REVIEW_PR_RECONCILED",
+  "evidence_urls": [
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro-contributions/openclaw/pull/2",
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/opensiro-contributions/openclaw/commit/fdd5c435bd22303634e9e5a25aef559e22f65c10"
+  ],
+  "next_action": "Fork-local PR #1 is open against main with clean six-file diff; PR #2 is closed unmerged as a duplicate. Owner review and source-native full verification remain; do not merge fork-local proposal or publish an original OpenClaw PR without separate approval."
+}
