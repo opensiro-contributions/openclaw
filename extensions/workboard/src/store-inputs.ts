@@ -123,6 +123,8 @@ export type WorkboardCompleteInput = WorkboardMutationScope & {
   proofId?: unknown;
   artifacts?: unknown;
   createdCardIds?: unknown;
+  /** Re-check dependency edges to attach before the current card can complete. */
+  ensureLinks?: unknown;
   /** Optional worker claims; never required and never checked before completion. */
   claims?: unknown;
 };

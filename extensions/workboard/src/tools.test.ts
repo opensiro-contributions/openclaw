@@ -517,6 +517,35 @@ describe("workboard tools", () => {
     expect(dispatch.promoted).toEqual([expect.objectContaining({ id: child.id, status: "ready" })]);
   });
 
+  it("holds a verdict through workboard_complete ensureLinks", async () => {
+    const store = createWorkboardSqliteTestStore();
+    const tools = toolSet(store);
+    const fix = await store.create({ title: "Fix", status: "running" });
+    const verdict = await store.create({ title: "Verdict", parents: [fix.id] });
+    const recheck = await store.create({ title: "Re-check", parents: [fix.id] });
+    const token = (await runTool(tools, "claim", { id: fix.id })).token as string;
+
+    expect(tools.get("workboard_complete")).toMatchObject({
+      parameters: { properties: { ensureLinks: { maxItems: 1 } } },
+    });
+
+    await runTool(tools, "complete", {
+      id: fix.id,
+      token,
+      createdCardIds: [recheck.id],
+      ensureLinks: [{ parent: recheck.id, child: verdict.id }],
+      summary: "Fix finished; re-check required before verdict.",
+    });
+    await runTool(tools, "dispatch", {});
+    expect((await store.get(verdict.id))?.status).toBe("todo");
+    expect((await store.get(recheck.id))?.status).toBe("ready");
+    expect((await store.get(verdict.id))?.metadata?.links).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ type: "parent", targetCardId: recheck.id }),
+      ]),
+    );
+  });
+
   it("redacts claim tokens from dispatch tool results", async () => {
     const store = createWorkboardSqliteTestStore();
     const tools = toolSet(store);

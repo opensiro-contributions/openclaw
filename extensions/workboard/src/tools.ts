@@ -177,6 +177,19 @@ const toolSchemas = {
     createdCardIds: Type.Optional(
       Type.Array(Type.String(), { description: "Cards created during this run." }),
     ),
+    ensureLinks: Type.Optional(
+      Type.Array(
+        strictObject({
+          parent: Type.String({ description: "Re-check card created by the completing card." }),
+          child: Type.String({ description: "Existing downstream card awaiting the re-check." }),
+        }),
+        {
+          maxItems: 1,
+          description:
+            "Link a re-check card to a downstream dependent before completing this card.",
+        },
+      ),
+    ),
     claims: Type.Optional(
       Type.Array(
         strictObject({
@@ -397,7 +410,7 @@ export function createWorkboardTools(params: {
       name: "workboard_complete",
       label: "Workboard Complete",
       description:
-        "Complete a claimed Workboard card with a structured summary, proof, artifacts, and created-card manifest.",
+        "Complete a claimed Workboard card with a structured summary, proof, artifacts, created-card manifest, and optional fail-closed re-check dependency handoff.",
       parameters: toolSchemas.complete,
       execute: claimedCardMutation((id, record, scope) => store.complete(id, record, scope)),
     },
