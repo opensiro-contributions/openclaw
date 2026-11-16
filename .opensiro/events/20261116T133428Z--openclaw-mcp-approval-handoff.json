@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "20261116T133428Z--openclaw-mcp-approval-handoff",
+  "recorded_at": "2026-11-16T13:34:28Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed metadata setup)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-embedded-mcp-tool-approvals",
+  "decision": "LOCAL_PATCH_HANDOFF_UNPUBLISHED",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/78308"
+  ],
+  "next_action": "Patch remains with another worker. Obtain a verified product branch/commit and native test receipts before advancing this contribution; no external contact or automatic PR publication."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "openclaw-embedded-mcp-tool-approvals",
+  "original_repository": "openclaw/openclaw",
+  "title": "Operator approval for embedded MCP tool calls",
+  "work_state": "BUILD",
+  "next_action": "The AI-assisted local patch for https://github.com/openclaw/openclaw/issues/78308 is being handled separately and has NOT been pushed to this fork. Do not duplicate implementation. Confirm the authorized product branch/commit and durable native test receipts when available; maintainer product/security review and exact public PR consent remain independent gates.",
+  "source_revision": "059db8a7c5aad9cea5014b6b989e2169db1d403e",
+  "native_evidence": [],
+  "work_branches": [],
+  "external_prs": [],
+  "last_event_id": "20261116T133428Z--openclaw-mcp-approval-handoff"
+}

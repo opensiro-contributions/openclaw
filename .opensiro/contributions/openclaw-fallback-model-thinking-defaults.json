@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "openclaw-fallback-model-thinking-defaults",
+  "original_repository": "openclaw/openclaw",
+  "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
+  "work_state": "BUILD",
+  "next_action": "Track https://github.com/openclaw/openclaw/issues/147509; re-read and verify the changing product branch head, source-matched base and native test results before an exact-consent fork-local review PR. Do not copy .opensiro into the product branch or publish external PR without approval.",
+  "source_revision": "b81742c8bfb591847601678178ff824336fc73eb",
+  "native_evidence": [],
+  "work_branches": [
+    "https://github.com/opensiro-contributions/openclaw/tree/opensiro/upgrade-fallback-thinking-147509"
+  ],
+  "external_prs": [],
+  "last_event_id": "20261116T133428Z--openclaw-fallback-thinking-checkpoint"
+}

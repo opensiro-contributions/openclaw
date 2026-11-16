@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "20261116T133428Z--openclaw-fallback-thinking-checkpoint",
+  "recorded_at": "2026-11-16T13:34:28Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed metadata setup)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "PRODUCT_BRANCH_OBSERVED_NOT_PUBLISHED",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/147509",
+    "https://github.com/opensiro-contributions/openclaw/commit/de7f940641d538cab3f3b99f397379f515f0851c"
+  ],
+  "next_action": "Continue independent review of actual tests and branch history; do not create public fork-local or external PR without exact current-conversation consent."
+}
