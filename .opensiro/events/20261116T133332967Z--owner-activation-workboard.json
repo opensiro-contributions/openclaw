@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "20261116T133332967Z--owner-activation-workboard",
+  "recorded_at": "2026-11-16T13:33:32.967Z",
+  "actor": "xLagerFeuer (explicit instruction in current conversation; executed via OpenSiro agent)",
+  "kind": "DECISION",
+  "contribution_id": "openclaw-workboard-atomic-recheck-197312",
+  "decision": "ACTIVATE",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/issues/197312",
+    "https://github.com/opensiro/upstream/blob/main/PROTOCOL.md"
+  ],
+  "next_action": "Allow source-native engineering on fork product branch; third-party or fork-local public PR publication separately consent gated."
+}

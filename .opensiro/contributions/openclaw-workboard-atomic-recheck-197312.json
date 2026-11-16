@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "openclaw-workboard-atomic-recheck-197312",
+  "original_repository": "openclaw/openclaw",
+  "legacy_sources": [],
+  "title": "Workboard atomic re-check dependency insertion",
+  "work_state": "RESEARCH",
+  "next_action": "Verify current source-native baseline, implement/test a minimal fail-closed create-and-link capability; prepare fork-local review for separate exact publication consent.",
+  "source_revision": "30e95e42d0a25c50a247bec285346084cd90d73c",
+  "native_evidence": [
+    "https://github.com/openclaw/openclaw/issues/197312"
+  ],
+  "work_branches": [],
+  "external_prs": [],
+  "last_event_id": "20261116T133332967Z--owner-activation-workboard"
+}
