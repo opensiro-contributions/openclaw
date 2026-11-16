@@ -106,6 +106,7 @@ describe("agent-runner-utils", () => {
         config?: FollowupRun["run"]["config"];
         run?: Partial<FollowupRun["run"]>;
         sessionThinkingLevel?: string;
+        candidateModelId?: string;
       } = {},
     ) {
       const run = makeRun({
@@ -120,7 +121,7 @@ describe("agent-runner-utils", () => {
         cfg: run.config,
         run,
         provider: "anthropic",
-        modelId: "claude-opus-5",
+        modelId: params.candidateModelId ?? "claude-opus-5",
         agentRuntime: "openclaw",
         ...(params.sessionThinkingLevel
           ? { sessionEntry: { thinkingLevel: params.sessionThinkingLevel } }
@@ -136,12 +137,13 @@ describe("agent-runner-utils", () => {
     it("clamps unsupported fallback model effort to its supported maximum", () => {
       expect(
         resolveFallback({
+          candidateModelId: "claude-sonnet-4-6",
           config: {
             agents: {
               defaults: {
                 models: {
                   ...candidateConfig.agents.defaults.models,
-                  "anthropic/claude-opus-5": { params: { thinking: "xhigh" } },
+                  "anthropic/claude-sonnet-4-6": { params: { thinking: "xhigh" } },
                 },
               },
             },
