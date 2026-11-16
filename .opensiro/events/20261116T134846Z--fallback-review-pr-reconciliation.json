@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261116T134846Z--fallback-review-pr-reconciliation",
+  "recorded_at": "2026-11-16T13:48:46Z",
+  "actor": "OpenSiro ChatGPT agent (owner-requested metadata reconciliation)",
+  "kind": "CHECKPOINT",
+  "contribution_id": "openclaw-fallback-model-thinking-defaults",
+  "decision": "EXISTING_FORK_LOCAL_REVIEW_PR_VERIFIED_NOT_READY",
+  "evidence_urls": [
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro-contributions/openclaw/commit/fdd5c435bd22303634e9e5a25aef559e22f65c10",
+    "https://github.com/openclaw/openclaw/issues/147509"
+  ],
+  "next_action": "Review PR https://github.com/opensiro-contributions/openclaw/pull/1 is OPEN but still targets opensiro/review-base-147509 instead of fork main; complete source-native integration/TypeScript verification and source-drift review. Prepare exact source-template review-gated disclosure and obtain separate current-conversation consent before changing this public fork-local PR. External PR not published."
+}

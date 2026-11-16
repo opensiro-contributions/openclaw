@@ -4,12 +4,15 @@
   "original_repository": "openclaw/openclaw",
   "title": "Honor fallback model thinking defaults and accurate clamp diagnostics",
   "work_state": "BUILD",
-  "next_action": "Track https://github.com/openclaw/openclaw/issues/147509; re-read and verify the changing product branch head, source-matched base and native test results before an exact-consent fork-local review PR. Do not copy .opensiro into the product branch or publish external PR without approval.",
+  "next_action": "Review PR https://github.com/opensiro-contributions/openclaw/pull/1 is OPEN but still targets opensiro/review-base-147509 instead of fork main; complete source-native integration/TypeScript verification and source-drift review. Prepare exact source-template review-gated disclosure and obtain separate current-conversation consent before changing this public fork-local PR. External PR not published.",
   "source_revision": "b81742c8bfb591847601678178ff824336fc73eb",
-  "native_evidence": [],
+  "native_evidence": [
+    "https://github.com/opensiro-contributions/openclaw/pull/1",
+    "https://github.com/opensiro-contributions/openclaw/commit/fdd5c435bd22303634e9e5a25aef559e22f65c10"
+  ],
   "work_branches": [
     "https://github.com/opensiro-contributions/openclaw/tree/opensiro/upgrade-fallback-thinking-147509"
   ],
   "external_prs": [],
-  "last_event_id": "20261116T133428Z--openclaw-fallback-thinking-checkpoint"
+  "last_event_id": "20261116T134846Z--fallback-review-pr-reconciliation"
 }
