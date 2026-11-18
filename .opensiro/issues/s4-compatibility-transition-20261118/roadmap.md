@@ -18,7 +18,7 @@ Observed [original revision](https://github.com/openclaw/openclaw/commit/5cb5f15
 
 ## Rights and authority
 
-Source [MIT license](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/LICENSE) and [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/CONTRIBUTING.md); note AI-assisted contribution and small, tested native changes. Verified working fork opensiro-contributions/openclaw parent openclaw/openclaw, §opensiro/meta§ attention ACTIVE, owner_control ALLOW at intake. No permission for public fork Issue or original publication inferred.
+Source [MIT license](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/LICENSE) and [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/CONTRIBUTING.md); note AI-assisted contribution and small, tested native changes. Verified working fork opensiro-contributions/openclaw parent openclaw/openclaw, `opensiro/meta` attention ACTIVE, owner_control ALLOW at intake. No permission for public fork Issue or original publication inferred.
 
 ## Existing work / overlap
 
