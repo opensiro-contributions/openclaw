@@ -1,75 +1,54 @@
-# OpenClaw — S4 prospective compatibility constructor sufficiency (developer contract)
+# OpenClaw — S4 compatibility: AI/developer on-top and sufficiency contract
 
-**PLAN_ONLY / DECISION_READY · DRAFT — NOT PUBLISHED.** This is the AI/developer half of [one human issue](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/issue.md), not a separate public Issue. Baseline, priority and stop verdict are identical in both documents.
+**2026-11-19 · PLAN_ONLY · terminal NO_GO** for an additional first-party developer-composable autonomous S4 compatibility-transition controller; current research label NEEDS_EVIDENCE. [Human decision](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/issue.md) is the single proposed public Issue, not this technical companion.
 
-## Boundary and historical states
+## System, assessment, functional boundary
 
-Original first-party source [openclaw/openclaw@5cb5f15409575744f6f2f157a5eed8c5bec2071b](https://github.com/openclaw/openclaw/commit/5cb5f15409575744f6f2f157a5eed8c5bec2071b); observed 2026-11-18. Accepted [Index](https://github.com/opensiro/vsm-harness-index/blob/5f6ea0c777733813ca42e3f210390a719488dcfb/assessments/op/openclaw.md) blob `e1d560bc5b28d90323b15f5f1af6a5293c614b45` reviewed 2026-09-16 at `387da5edaa9d6c6cfcfc15e167fe2e46d8647d86`, Profile 0.2.1, assessment procedure 0.3.1. **Historical S1=A; S2=C; S3=C(P); S3*=—; S4=—; S5=—.** 63-day-old review: re-assessment recommended separately. Runtime in scope: Gateway, installed plugins, plugin SDK, Doctor, operator-reviewed host system-agent commands; vendor facts, external ClawHub plugins and human operator are not first-party functionality.
+Original [openclaw/openclaw@307d9c45fb2548d300276c473ccb7c5cab4768bc](https://github.com/openclaw/openclaw/commit/307d9c45fb2548d300276c473ccb7c5cab4768bc), observed 2026-11-19. Accepted [Index](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md), blob **e1d560bc5b28d90323b15f5f1af6a5293c614b45**, reviewed **2026-09-16**, review source **387da5edaa9d6c6cfcfc15e167fe2e46d8647d86**, Profile 0.2.1, procedure 0.3.1, matching included catalog on Index **394ce776e6945115891b8f7cc459f5a7f7d7aa39**. Historical accepted **S1=A / S2=C / S3=C(P) / S3*=— / S4=— / S5=—**, not new current grades; 64 days old, recommend separate Index reassessment.
 
-## Functional scope and exclusion
+First-party in scope: Gateway, installed plugin metadata, SDK notices/status, plugin update commands/Doctor, system-agent exact host approval. Vendors, ClawHub third-party plugins and human operator organization remain outside. S1/S2/S3 have no mandatory duplicate C engineering. S3* and S5 are out of scope. S4 outside-and-then must use an external future distinction and return to an actual operation; a current warning, generic hook or host approval alone is not that function.
 
-| Function | Observed vs proposed |
-| --- | --- |
-| S1 | Existing ordinary agent operations `A`; no change proposed |
-| S2 | Existing session communication `C`; no change proposed |
-| S3 | Existing `C(P)` exact host-approved changes in [system-agent tool](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/agents/tools/system-agent-tool.ts); retain authority, never let S4 actor self-approve |
-| S3* | Historically absent; neither event logging nor Doctor is an independent complementary-audit actor; out of scope |
-| **S4** | Candidate `C`: external prospective distinction; developer-supplied decision actor; options and S3 dialogue; actual later-operation return |
-| S5 | Identity/ultimate policy reserved to legitimate operator; host approval for S3 is not S5 closure; no proposed grade |
+**Operator counterfactual:** can an OpenClaw operator respond to an upcoming API retirement for an actually installed plugin *more accurately or cheaply* using an actor-owned S4 selection than with first-party Doctor, update dry-run and manual migration?
 
-**P0:** one narrowly scoped S4 compatibility-transition constructor. **P1:** necessary first-party snapshot/options/host-gate/receipt ports. **P2: NONE.** No implementation, new grade, test execution or savings asserted.
+## Track A: current shipped and original work
 
-## Source-native map: what is shipped and what is not
+- SHIPPED: [SDK usage registry](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/src/plugins/sdk-deprecation-usage.ts), [notice generation](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/src/plugins/sdk-deprecation-notices.ts), [status](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/src/plugins/status.ts), [plugin update command](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/src/cli/plugins-update-command.ts) and [host approval](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/src/system-agent/approval-intent.ts). Those do not establish the future-actor/options/feedback chain.
+- OPEN [#190536](https://github.com/openclaw/openclaw/issues/190536) and [PR #200932](https://github.com/openclaw/openclaw/pull/200932), head **e1f94d4b85d4ee65dd24b45a036fb47018a2fcd0**; actual diff changes dated wording in SDK notice, Control UI and tests, not S4 decisions. [PR #190752](https://github.com/openclaw/openclaw/pull/190752) CLOSED_UNMERGED is overlapping warning work.
+- OPEN [#131897](https://github.com/openclaw/openclaw/issues/131897) and [RFC #66](https://github.com/openclaw/rfcs/pull/66), head **eb7d01d73d9555d1280b1ac5cae9d0c8b28d8607**, propose update-availability metadata and displays, with an unresolved original-scope decision; not shipped by the proposal.
+- OPEN [#159743](https://github.com/openclaw/openclaw/issues/159743) proposes *post*-upgrade observations, with unsettled lifecycle/status ownership. CLOSED_NOT_PLANNED [#179294](https://github.com/openclaw/openclaw/issues/179294) is an administratively closed proposed pre-upgrade install × release report, not shipped. CLOSED_UNMERGED [PR #164501](https://github.com/openclaw/openclaw/pull/164501), head **f559dae7f3d3c6a3a44fe232f2a8eaab660a6580**, is not an installed recipe.
+- OPEN [#200928](https://github.com/openclaw/openclaw/issues/200928) is a real future Atlassian endpoint issue, but the plugin-specific owner fix plus human reauth is the best small baseline; no S4 controller required for that task.
 
-1. **SHIPPED observations:** [`src/plugins/sdk-deprecation-notices.ts`](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/plugins/sdk-deprecation-notices.ts) reads registered `removeAfter` for imported SDK APIs and formats notices; [`src/plugins/status.ts`](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/plugins/status.ts) integrates compatibility notice inspection. These support only current awareness of some future dates.
-2. **SHIPPED current-control boundary:** [`src/agents/tools/system-agent-tool.ts`](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/agents/tools/system-agent-tool.ts) lists typed read and persistent actions; the host tracks one exact proposal fingerprint and approval-arm state. [`src/system-agent/approval-intent.ts`](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/system-agent/approval-intent.ts) refuses to trust model text as independent approval. These are **S3/P approval primitives**, not an S4 controller.
-3. **SHIPPED reactive model discovery:** [`src/agents/prepared-model-runtime.discovery-retry.ts`](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/src/agents/prepared-model-runtime.discovery-retry.ts) has retry and inventory freshness; it is not a proof of independent future scenarios or a plugin migration choice.
-4. **ISSUE_ONLY / closed:** [#179294](https://github.com/openclaw/openclaw/issues/179294) proposed installation manifest × target release impact report; closed without evidence of shipping. Reuse idea, do not represent it as merged.
-5. **OPEN ISSUE and OPEN PR:** [#190536](https://github.com/openclaw/openclaw/issues/190536) / [#200932](https://github.com/openclaw/openclaw/pull/200932) at head `e1f94d4b85d4ee65dd24b45a036fb47018a2fcd0` repair notice wording. [#190752](https://github.com/openclaw/openclaw/pull/190752) at `71395005fe9fa5d9e3f6a2e19110e15b228445eb` was closed unmerged. The proposed contract deliberately excludes date-text fixes already covered.
-6. **EXTERNAL FUTURE FACT:** [#200928](https://github.com/openclaw/openclaw/issues/200928) shows a future Atlassian endpoint retirement for a plugin with re-auth implications; the third-party plugin and vendor claims are external, not OpenClaw-shipped controller capability.
-7. **UNVERIFIED:** no current first-party public S4 constructor for trusted prospective vendor/release facts -> developer-authored decision -> S3-approved migration -> later-operation receipt was established by this focused read. This is a research gap statement, not proof the entire large codebase lacks all S4 functionality.
+## Track B: independently developed on-top options
 
-## Exact proposed S4 interface and ownership
-
-**Counterfactual:** operator with multiple installed plugins currently must map vendor/release changes to actual use and decide tradeoffs manually; an independently composed controller could triage competing retirement deadlines and schedule safe option proposals while preserving consent. The existing CLI/Doctor might still be good enough; measure before developing.
-
-Proposed **minimal first-party** producer and decision/return ports (API names are conceptual, not claimed to exist):
-
-| Port | Trusted input / producer | Contract and essential negative condition |
-| --- | --- | --- |
-| P1-A · `compatibilityForecast.snapshot` | Host-installed plugin/SDK metadata + allowlisted signed/versioned release/deprecation facts | Redact credentials and conversations; carry source URL, retrieval time, verification and expiry; missing external fact is `UNKNOWN`, not safe |
-| P1-B · `compatibilityForecast.options` | Current installed manifests + supported target versions/replacement/hold branches | At least `hold` and source-backed, permitted alternatives; no invented upgrade, no cross-plugin authority |
-| P0-C · `compatibilityForecast.decide` | **Developer-composed autonomous actor** installed through first-party documented registration; receives immutable snapshot, options, policy boundary and budget | Actor actually chooses option from allowed set, or abstains; arbitrary generic hook/listener alone is insufficient |
-| P1-D · `systemAgent.proposeApprovedTransition` | Typed, host-owned S3 controller / existing exact-proposal approval lifecycle | Revalidate option, policy, installed version, scope and operator approval; decision actor has **no direct mutation/approval right**; denial/expiry fails closed |
-| P0-E · `compatibilityForecast.receiptAndRecheck` | Host-applied config/plugin result + next supported runtime/plugin inspection and actual agent/tool use | Durable source/decision/approval/action/after-state linkage; observed later run returns to composed S4 actor; no receipt solely on emitted recommendation |
-
-**Required construction sufficiency:** all five ports must be reachable in a supported installation (not test-only), bind the external/future disturbance to real present affected resources, permit an independently supplied decision actor to choose among lawful options, preserve S3 and ultimate policy rights, apply a safe change when expressly approved, and return observed downstream behavior into later option selection. If the actor merely generates prose or a host hardcodes every choice, it is not the proposed S4 `C`. Operator `hold` may be a valid terminal decision without changing resources.
-
-**S3 ↔ S4 linkage:** S3 supplies current plugin inventory, constraints and past outcomes; S4 supplies deadline/compatibility alternatives; S3 validates and may hold/approve/apply; a later S1 tool invocation plus refreshed current inventory closes feedback into S4. Parent authorization stays legitimate `P`; no S5 delegation is created.
-
-## Native-first incremental plan (no code authored)
-
-- **P1-1:** validate #179294 demand with maintainers and choose the smallest plugin-first extension rather than embedding a second global updater; dedupe #190536/#200932, honor [VISION](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/VISION.md).
-- **P1-2:** add read-only, bounded current-install compatibility manifest and externally sourced release/deprecation facts, documented trust/expiry. Reuse existing notices and Doctor result instead of duplicating monitors.
-- **P0-1:** add a distributable function-specific S4 controller registration/action interface (distinct from general `onChange` hooks) with two genuine lawful choices, visible decision owner and explicit schema.
-- **P1-3:** implement exact host-review bridge using existing system-agent approval semantics, and future source-native operational re-check; stop if the chosen action is outside existing authorized ops.
-- **P0-2:** native integration tests and one actual installed plugin + later-operation demonstration before any claim of delivered C. A successful unit-only mock is insufficient.
-
-## Proposed native acceptance and falsification — NOT EXECUTED
-
-| Case | Stimulus and alternative | Required observable outcome | Falsifies C if |
+| Source covered | On-top delta | User outcome vs current | Falsifier / now |
 | --- | --- | --- | --- |
-| **AC-01 positive** | Installed fixture plugin with verifiable future retirement; external future update; composed actor chooses supported migration | Approved typed operation; later plugin/agent operation uses migrated surface; durable receipt attributed to this choice and checked against updated inventory | No first-party S4 actor or no actual later run/feedback |
-| **AC-02 lawful hold** | Same facts, actor chooses `hold` | No mutation, recorded dated hold/recheck choice; next run revisits after facts change | Hardcoded migration ignores selected hold |
-| **AC-03 untrusted signal** | Forged, unauthenticated, stale or contradictory release fact | No authorized migration; explicit unknown/conflict, safe manual review | Untrusted text becomes executable authority |
-| **AC-04 denied operation** | Valid recommendation but operator denies or no approval | No effect; receipt records rejection and no false success; later operations unchanged | Model/actor self-approves, or retry bypasses hash |
-| **AC-05 compatibility** | Target plugin lacks supported replacement or requires re-auth | Explicit blocked/hold branch and handoff; existing sessions and other plugins continue | Silent install or credential mutation |
-| **AC-06 baseline comparison** | Same affected plugin using stock Doctor + manual change | Compare equivalent result, engineering burden and unintended effects | Proposed port duplicates a cheaper native capability |
+| SDK notice / #200932 | Reuse unchanged | Keep migration date visibility | No material extra result; do not duplicate |
+| #131897/RFC #66 update availability proposal | Add **read-only plugin-specific** installed/retirement/target/hold projection, on owner-approved metadata surface | Operator sees actionable installed risk instead of manually joining lists | Current dry-run sufficient, source data missing, owner declines scope. **P1 conditional / NOT_EVIDENCED for S4 C** |
+| #159743 post-update observer | Conditionally consume later-run status once owner/API accepted and shipped | See effect of an approved upgrade | Not a prospective decision owner today |
+| #179294 broad release report | Narrow plugin-only impact, avoid another global planner | Potentially cheaper first slice | No release metadata owner/supported contract; broader P0 rejected |
+| #200928 future endpoint | Issue-native patch/re-auth docs | Specific incident resolved | Native fix makes global controller unnecessary |
+| System-agent host approval | Hypothetical S4 actor sends bounded proposals to exact S3 owner | Developer-composed lawful update-or-hold and later feedback | No first-party composability/independent choice or actual later outcome proven; **NO_GO** |
 
-Test location proposal (not verified present): focused tests adjacent to `src/plugins/sdk-deprecation-notices.test.ts` and host approval tests; add source-native integration case with installed plugin and later agent operation. Native commands per CONTRIBUTING, e.g. `pnpm test <file> --maxWorkers=1`, plus relevant type/lint/build. **None executed.**
+An open Issue is an interface/demand lead, not a built feature. No PR was altered, and no native test or external maintainer conversation occurred.
 
-## Rights, blockers, stop
+## Conditional S4 C construction — rejected P0, not current work
 
-MIT license and [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/5cb5f15409575744f6f2f157a5eed8c5bec2071b/CONTRIBUTING.md) permit examining and preparing research. The working fork `opensiro-contributions/openclaw` parent and `opensiro/meta` current `ALLOW` were checked; this does **not** grant external publication or CLA consent. Any code requires a *separate explicit* Upgrade instruction, product branch, native tests, evidence and review. Stop / downgrade to `NEEDS_EVIDENCE` if no legitimate native need beyond date wording, sufficient standard Doctor/manual baseline, unverifiable external facts, unreachable first-party registration/enforcement port, or forbidden scope. Historical Index `S4=—` alone is not the reason to build.
+A sufficient future combination would need: (1) **trusted, source/expiry-bound prospective external changes**; (2) **redacted actual installed plugin/SDK and supported update choices**, including hold and UNKNOWN; (3) **documented first-party registration for an independent developer-composed S4 decision actor**, not mere prose or generic callback; (4) **typed S3 exact host approval and atomic revalidation**, no self-approval; (5) **durable result with a later real plugin/tool-run observation**, returned to S4 to revise future options. The code, demand and authority for this whole path have not been established. A current alternative is native Doctor/update dry-run + human choice, or a narrowly scoped preview if the RFC owner asks.
 
-**Handoff back to human:** [issue.md](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/issue.md) · [roadmap receipt](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/roadmap.md). **P0=S4 candidate / P1=ports / P2=NONE; PLAN_ONLY / DECISION_READY.** AI-assisted design; not independently reviewed or executed.
+**Historical S4=— → current source evidence incomplete → C target NOT QUALIFIED. P0: NONE. P1: conditional native read-only preview. P2: NONE.** No grade change. S3(P) approval remains separate; S5 owner rights and S3* independence are not invented.
+
+## Native acceptance / falsifiers — proposed, NOT RUN
+
+- **AC-01 future positive:** installed plugin with verified future date and supported target; independently registered actor chooses update, host approves exact typed mutation; later actual plugin tool call works and attributed receipt is returned. Without an actor or actual later feedback, no C.
+- **AC-02 lawful hold:** same facts but actor chooses hold; zero mutation, risk/expiry retained and subsequent source update can change choice. Hardcoded upgrade falsifies composition.
+- **AC-03 bad facts/authority:** stale or fabricated vendor information, unsupported target, credential reauth, denied/missing approval fail closed; no silent install, model self-approval, or credential route selection.
+- **AC-04 manual baseline:** compare the same installed plugin against stock Doctor/inspect/update dry-run and operator migration. No improved observable task with acceptable all-in cost means no useful controller.
+- **AC-05 backwards compatibility:** unaffected plugins, installed packages and existing owner-controlled system-agent actions continue unchanged.
+
+Future real engineering would use native notice/update/approval fixture tests, supported installed-plugin integration and a later-run witness, plus a new Upgrade material-delta preflight; this roadmap executed **no** tests.
+
+## Decision, costs, rights, and handoff
+
+**Terminal NO_GO NOW** for the named speculative S4 migration controller, not for useful source-native bugfixes. No demonstrated first-party future actor, safe vendor fact contract, later feedback or incremental advantage; generic missing historical S4 grade alone never justifies a new controller. Reconsider only if a concrete installation, maintainer-chosen #131897 scope and complete new actor/outcome evidence emerge. All-in cost **NOT_MEASURED**.
+
+[OpenClaw contributing rules](https://github.com/openclaw/openclaw/blob/307d9c45fb2548d300276c473ccb7c5cab4768bc/CONTRIBUTING.md): new architecture requires prior original discussion; public fork/original Issues/PRs need separate exact current-conversation approval. Verified working fork **opensiro-contributions/openclaw** parent original, metadata control **ALLOW / ACTIVE** on 2026-11-19. This is plan-only research; no code, third-party contact, public fork Issue, Index reassessment or measured saving. [Human issue](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/issue.md) · [receipt](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s4-compatibility-transition-20261118/roadmap.md).

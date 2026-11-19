@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "20261119T145819Z--s4-compatibility-on-top-rerun",
+  "recorded_at": "2026-11-19T14:58:19Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed)",
+  "kind": "DECISION",
+  "case_id": "s4-compatibility-transition-20261118",
+  "decision": "NO_GO",
+  "decision_scope": "Additional autonomous S4 plugin compatibility-transition controller beyond native status/update/host approval; a small read-only on-top preview on existing #131897 remains conditional native work, not a C witness",
+  "previous_research_state": "2026-11-18 design-only DECISION_READY, no terminal verdict",
+  "evidence_urls": [
+    "https://github.com/openclaw/openclaw/commit/307d9c45fb2548d300276c473ccb7c5cab4768bc",
+    "https://github.com/openclaw/openclaw/issues/131897",
+    "https://github.com/openclaw/rfcs/pull/66",
+    "https://github.com/openclaw/openclaw/pull/200932",
+    "https://github.com/openclaw/openclaw/issues/179294",
+    "https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md",
+    "https://github.com/opensiro/upstream/issues/58"
+  ],
+  "meta_parent_sha": "a4340053d5bd0dcd3420670fb297a54e4a235994",
+  "next_action": "NO_GO to speculative autonomous S4 controller; native Doctor/dry-run now, and only separately approved owner-scoped read-only RFC on-top research if actual installation need is established. No public Issue or code changes."
+}
