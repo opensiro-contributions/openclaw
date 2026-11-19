@@ -22,3 +22,18 @@ The target is deliberately narrow: whether a **new** function-specific S3* devel
 **Priorities:** P0 = NO_GO to duplicate reviewer-model feature; P1 = evidence review of original PR only; P2 = NONE.
 
 **Next valid action:** observe the original PR and run an Index-owned source-pinned reassessment if a current-grade claim matters; propose a distinct new capability only after an independently evidenced task and original-native counterfactual. **Do not** implement or publish a duplicate reviewer feature now. Prepared with AI assistance.
+
+
+## v0.17.0 contribution-on-top requalification
+
+**Decision scope:** one additional OpenSiro S3* Advisor reviewer-model feature — not all OpenClaw S3* potential. The earlier NO_GO is retained **only after an explicit A+B comparison**, not merely because an original PR exists.
+
+**Protocol:** [Upstream v0.17.0](https://github.com/opensiro/upstream/blob/0231dfd238f8fa6cdb779393c3c5f087f7599f7c/PROTOCOL.md). **Requalification observation:** 2026-11-19.
+**Source recheck:** [openclaw/openclaw@af59c375011bbff913cf6d5ffc950da22eaaf0d6](https://github.com/openclaw/openclaw/commit/af59c375011bbff913cf6d5ffc950da22eaaf0d6); [current accepted Index](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md) still contains the accepted blob e1d560bc5b28d90323b15f5f1af6a5293c614b45, historical source review_ref 387da5edaa9d6c6cfcfc15e167fe2e46d8647d86. Earlier frozen observations in this case remain intact.
+**Live original overlap readback:** [Issue #184787](https://github.com/openclaw/openclaw/issues/184787) OPEN; [PR #196242](https://github.com/openclaw/openclaw/pull/196242) OPEN at head cfd89afbe771bfdbc69cf5c7be203a2cd85e327f; dependency [PR #196240](https://github.com/openclaw/openclaw/pull/196240) OPEN. These are **proposals**, not shipped code or verified native runtime tests.
+
+**Track A:** bundled same-model Advisor is shipped, whereas [Issue #184787](https://github.com/openclaw/openclaw/issues/184787) / [OPEN PR #196242](https://github.com/openclaw/openclaw/pull/196242) (OPEN dependency #196240) own different-model selection and are not shipped yet.
+
+**Track B:** reuse unchanged = no new feature; integration of original PR with evidenced, provenance-preserving review feedback = **NOT_EVIDENCED**; adjacent direct-evidence S3* correction audit = **NOT_EVIDENCED**; separate native reviewer defects/Auto Review handoff = **REPAIR_ONLY / NOT_APPLICABLE** to this case. A concrete operator need, source-native gap and matched tests are required to reopen.
+
+**Final bounded decision:** **NO_GO** to duplicating the original proposed reviewer-model selection; **P0: none admitted**, P1 = optionally evaluate original PR if separately requested, P2 = NONE. Read [Human A+B matrix](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/issue.md), [technical sufficiency matrix](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/constructor-sufficiency.md), and [receipt](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/roadmap.md). No new public Issue/PR or test result.
