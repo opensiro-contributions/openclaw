@@ -14,7 +14,7 @@ The accepted [Index assessment](https://github.com/opensiro/vsm-harness-index/bl
 
 > **Historical autonomy:** `S1=A · S2=C · S3=C(P) · S3*=— · S4=— · S5=—`
 
-**Original pinned:** [OpenClaw at cd2ae19272a3ee7be456385fa7efc56d6e2109a6] (https://github.com/openclaw/openclaw/commit/cd2ae19272a3ee7be456385fa7efc56d6e2109a6). Product boundary: user-facing Gateway/runtime and supported plugins, not CI, Foundation governance or unrelated third-party plugins. Source map includes agent and session orchestration, system agent approvals, security and tool policy, trajectory, Advisor, automations, SDK plugins, distributed apps and testing inventory.
+**Original pinned:** [OpenClaw at cd2ae19272a3ee7be456385fa7efc56d6e2109a6](https://github.com/openclaw/openclaw/commit/cd2ae19272a3ee7be456385fa7efc56d6e2109a6). Product boundary: user-facing Gateway/runtime and supported plugins, not CI, Foundation governance or unrelated third-party plugins. Source map includes agent and session orchestration, system agent approvals, security and tool policy, trajectory, Advisor, automations, SDK plugins, distributed apps and testing inventory.
 
 | Function / plain-language role | Historical Index state | Current source-backed owner/closure | Disposition |
 | --- | --- | --- | --- |
@@ -58,3 +58,7 @@ Prefer native Advisor for the live review task; original bug fix #201834 concern
 Original MIT; [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/cd2ae19272a3ee7be456385fa7efc56d6e2109a6/CONTRIBUTING.md) requests feature/architecture discussion before implementation and favors plugins; legal CLA/DCO/formality details remain to verify for any future PR. Fork `ACTIVE/ALLOW` for internal metadata only. **No original/fork public Issue, PR, comment, implementation, external publication or authority grant.** AI-assisted PLAN_ONLY draft, not independently human-tested or shipped.
 
 **Canonical links:** [roadmap.md](roadmap.md) · [constructor-sufficiency.md](constructor-sufficiency.md).
+
+## Independent newer-HEAD readback (2026-11-19)
+
+A fresh read of [original `6502a5769c0ea37a96384111b84ab406e9e82f89`](https://github.com/openclaw/openclaw/commit/6502a5769c0ea37a96384111b84ab406e9e82f89) independently supports this same **S3*=— -> S3*=C / GO / NEEDS_EVIDENCE** as an opt-in *direct-evidence* verifier—not a new original feature request or a regrade. Native [Advisor](https://github.com/openclaw/openclaw/blob/6502a5769c0ea37a96384111b84ab406e9e82f89/extensions/advisor/index.ts), [audit inspector](https://github.com/openclaw/openclaw/blob/6502a5769c0ea37a96384111b84ab406e9e82f89/src/gateway/server-methods/audit.ts) and [plugin hooks](https://github.com/openclaw/openclaw/blob/6502a5769c0ea37a96384111b84ab406e9e82f89/docs/plugins/hooks.md) supply primitives but do not themselves prove a separately deciding post-run evidence check that changes a later permitted operation. Source-only; tests and cost are unmeasured. Full Track A/B counterfactual, old-case comparison and falsifier are preserved in the [canonical receipt](roadmap.md). No new public Issue or PR.
