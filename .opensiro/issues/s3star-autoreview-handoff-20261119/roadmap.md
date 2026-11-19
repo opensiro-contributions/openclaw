@@ -11,6 +11,12 @@
 - Result: PLAN_ONLY
 - External issue: DRAFT — NOT PUBLISHED
 - Cost status: NOT_MEASURED
+- Receipt contract: contribution-on-top
+- Evaluation object: New S3* independent audit constructor for the bundled OpenClaw Auto Review handoff, not the whole harness or the existing original defect repair
+- Existing-work overlap: Shipped restricted Auto Review plus original open issue #201834 and distinct prior merged watchdog/reviewer PRs
+- Our on-top contribution: Tested hypotheses for a durable audit receipt, independently composed corrective audit actor, and minimal cross-repository deadline integration
+- Incremental benefit: Native issue repair has material reliable-review value; extra S3* audit-controller outcome remains NOT_EVIDENCED against native alternatives
+- Decision scope: NO_GO only to new Auto Review S3* C construction now; original source-native issue #201834 is not vetoed
 
 ## Identity and pins
 
@@ -23,6 +29,19 @@
 ## Existing work / overlap
 
 [Original issue #201834](https://github.com/openclaw/openclaw/issues/201834) is OPEN and describes loss of completed reviewer output and true helper timeout due split deadlines and late submit. [Shipped Auto Review tool](https://github.com/openclaw/openclaw/blob/08b4ac92c1978f1f68dd78b53e7879ba24363c1b/extensions/autoreview/src/tool.ts#L361-L464) and [separately owned helper](https://github.com/openclaw/agent-skills/blob/3cc834ceec0410c4ff37c09e5b81c91e65fc9fc9/skills/autoreview/scripts/autoreview#L8856-L8872) indicate distinct timeout and exchange phases; [merged PR #173455](https://github.com/openclaw/openclaw/pull/173455) introduced restricted reviewer and [merged PR #200743](https://github.com/openclaw/openclaw/pull/200743) covers an outer watchdog, not this per-pass bug. Bounded PR search mentioning `#201834` found none, not an exhaustive no-PR guarantee. Existing fork Advisor and S4 roadmaps have different targets.
+
+## Parallel contribution-on-top review
+
+| Track | Existing → coverage | Proposed on-top change | Incremental operator outcome | Falsifier / evidence verdict |
+| --- | --- | --- | --- | --- |
+| **A · Original-native bug** | [Bundled Auto Review handoff](https://github.com/openclaw/openclaw/blob/08b4ac92c1978f1f68dd78b53e7879ba24363c1b/extensions/autoreview/src/tool.ts#L361-L464) plus [open #201834](https://github.com/openclaw/openclaw/issues/201834): restricted reviewer exists, but helper and reviewer timeouts are not coordinated; no submitted accepted repair identified | Minimal shared pass deadline and authoritative error propagation, under original owner and canonical-helper dependency | Prevent lost completed result and misleading timeout in the *existing* user task | This is a useful **native repair lead**, not sufficient evidence of new S3* C. Its actual solution, tests and maintainer decision remain separate |
+| **B1 · Our provenance/receipt extension** | Existing helper already exchanges `run_id`, `pass`, `prompt_sha256`; issue calls for stage-specific error and reliable completion | A first-party durable audit-result receipt linking reviewer decision, failure stage and later operator inspection | Potentially easier diagnosis across restarts or repeated review passes | **NOT_EVIDENCED:** no independent operator need beyond the original fix, no supported durability/retention contract or legitimate new audit decision owner; if native P1 fixes diagnostics, no material delta |
+| **B2 · Our S3* composition extension** | Shipped restricted reviewer is a component; separate [Advisor S3* roadmap](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/README.md) examines model-selection oversight, not this helper timeout | Developer-composed independent complementary-audit actor chooses `hold`/lawful correction, returns to S1/S3 with later feedback | Would be distinct only if an operator needs a new independently owned *organizational* correction decision, not simply delivered review text | **NOT_EVIDENCED:** no such extra task, actor authority/first-party installation or corrective-return requirement demonstrated; native result-delivery repair remains cheaper |
+| **B3 · Our cross-repo integration** | Original plugin invokes separately owned [canonical helper](https://github.com/openclaw/agent-skills/blob/3cc834ceec0410c4ff37c09e5b81c91e65fc9fc9/skills/autoreview/scripts/autoreview#L8856-L8872) | One bounded deadline ownership contract + matched regression tests across both repos | Correct existing result handoff with less diagnostic loss | **COVERED BY ORIGINAL ISSUE INTENT:** valid narrow engineering hypothesis, not a distinct additional S3* feature; maintainer coordination is necessary before patches |
+
+**Incremental-value conclusion:** an original issue is **not** a categorical veto. We independently considered an additional durable audit receipt, a composable corrective auditor and the cross-repo integration beyond shipped behavior. The cross-repo integration has concrete native-repair value **within original #201834**, but the proposed extra S3* constructor and persistent receipt lack independently justified incremental benefit. **NO_GO applies only to a new S3*=C constructor for this Auto Review handoff, not to native #201834 repair, another OpenClaw task, or the whole harness.** No new API, tests, cost measurement or external maintainer adoption claimed.
+
+**Decision at this receipt:** NO_GO for bounded unproven additional S3*=C, separately preserving the original native bug repair as source-owned work. All on-top features are unshipped research hypotheses and require distinct adoption/engineering authority.
 
 ## Function ownership
 
