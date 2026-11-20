@@ -1,103 +1,77 @@
-# OpenClaw — S3* Advisor independent-review constructor sufficiency
+# OpenClaw Advisor — native S3* complementary audit constructor contract
 
-**Status:** `PLAN_ONLY / NEEDS_EVIDENCE`; **final decision: NO_GO** for duplicate implementation. **DRAFT — NOT PUBLISHED**.
-**Canonical location:** `opensiro-contributions/openclaw@opensiro/meta:.opensiro/issues/s3star-advisor-review-20261119/constructor-sufficiency.md`.
-**Human decision:** [issue.md](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/issue.md) · [receipt](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/roadmap.md). Same boundary, vector, priorities and decision apply.
+**Status:** PLAN_ONLY / HYPOTHETICAL. **DRAFT — NOT PUBLISHED.** Native tests NOT_RUN; benefit and costs NOT_MEASURED.
+**Target transition:** S3*=— -> S3*=C
+**Proposal-stage decision:** GO
+**Research disposition:** NEEDS_EVIDENCE
+**Validation state:** NOT_RUN
 
-**Historical accepted vector:** `S1=A · S2=C · S3=C(P) · S3*=— · S4=— · S5=—` (not a current grade).
+**Level 1:** [issue.md](issue.md). **Canonical single decision:** [roadmap.md](roadmap.md). This technical document does not create a second grade or a second case ID.
 
-## Functional scope and authority
+## 1. Function boundary and counterfactual decision owner
 
-The only researched potential new constructor is **S3***: independent complementary examination of the actual running system and a return path for corrective action. The following functions retain their own owners and do **not** become additional feature targets.
+**Original source pin:** [openclaw/openclaw@599bc4222a48594445c7d531c063be828be3482a](https://github.com/openclaw/openclaw/commit/599bc4222a48594445c7d531c063be828be3482a) (observed 2026-11-20). Trusted Gateway plus configured assistant and bundled Advisor for admitted user-directed runs are in scope. Operator approvals and host tool permission remain authoritative; Foundation/governance, model providers, external plugins and maintenance decisions are outside. Accepted Index historical states, six-function dispositions, review ref/blob and source relevance are centralized in [roadmap.md](roadmap.md).
 
-| Function | Historical accepted | Distinct role and boundary |
-| --- | --- | --- |
-| S1 | **A** | User-facing model/harness operations; reviewer must not silently acquire operational authority |
-| S2 | **C** | Native session communication and responsibility, not by itself complementary audit |
-| S3 | **C(P)** | Current resource/configuration control; host approvals stay authoritative |
-| S3* | **—** | Historical absence of sufficiently independent complementary audit in reviewed standard distribution |
-| S4 | **—** | Future environmental adaptation not demonstrated by Advisor steering |
-| S5 | **—** | Parent policy/identity authority not created by a reviewer model |
+**Selected S3* operating disturbance:** an already admitted agent is about to continue after a settled tool outcome shows a possible harmful contradiction, repeated no-op or unsupported completion claim. Its ordinary Advisor can advise the acting model, but cannot decide a bounded enforceable hold; a model fork is not a complementary operational closure.
 
-Accepted [Index assessment](https://github.com/opensiro/vsm-harness-index/blob/34e11ec4dd52e1ba3ee0111d8bca73f13918f54f/assessments/op/openclaw.md), `review_ref=387da5edaa9d6c6cfcfc15e167fe2e46d8647d86`, reviewed `2026-09-16`, Profile `0.2.1`, Methodology `0.3.1`; blob `e1d560bc5b28d90323b15f5f1af6a5293c614b45`. This is **historical**, not an assessment of [current original HEAD](https://github.com/openclaw/openclaw/commit/8c0d54b97fe5d79b4c93591fb8794250ce7a198c). Source drift and 64-day elapsed review merit Index re-review but do not force a grade or block source-only research.
+**Function-specific decision right:** a trusted developer-installed independent Advisor reviewer (not the acting S1 agent or parent operator) decides a limited complementary CONTINUE / HOLD_FOR_OPERATOR / CORRECT_AND_REAUDIT on an exact run/version based on settled first-party tool evidence. The existing Gateway alone enforces the valid effect according to host policy. The operator, not the reviewer, may authorize resumed execution or deny. The reviewer receives the exact applied/denied/expired outcome before a subsequent audit; S3 can observe any permitted run status without ceding S3 authority.
 
-## 1. Boundary, operator outcome and counterfactual
+**Counterfactual:** with the reviewer removed, Gateway still runs sessions and enforces its own hard policies but makes no independent case-specific S3* judgment. A fixed host always-HOLD or a self-review suggestion is not equivalent to a developer-selected autonomous audit owner. If removing the reviewer changes nothing in a matched run, C is falsified. If the configured reviewer can silently turn itself into a trusted operator, the proposed parent boundary is invalid and should stop.
 
-**System-in-focus:** original first-party OpenClaw Gateway and bundled Advisor plugin for admitted active, user-directed runs, including its session model fork and plugin policy. Exclude maintainer GitHub automation, external/private plugins and operator identity as an autonomous S3* actor.
+**Function interactions:** S1 performs user tasks; S2 delivers session/routing status; S3 hosts current operational controls; proposed S3* audits complementary evidence and closes an independent decision/effect/return; S4 is not added; S5 rights remain with original host/operator. Do not treat native security logging, a reviewer name, an unmerged PR, human preference or a ModelOps subsystem as proof of C.
 
-**P0 investigated:** let an operator configure a *different* reviewing model to detect blind spots during a supported active agent run and issue a bounded corrective steer. The simplest supported baseline is shipped same-model [Advisor](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/extensions/advisor/index.ts) plus explicit operator review. The original [issue #184787](https://github.com/openclaw/openclaw/issues/184787) and [PR #196242](https://github.com/openclaw/openclaw/pull/196242) already describe the proposed cross-model model-selection implementation. No separately evidenced material task remains for an OpenSiro duplicate.
+## 2. First-party Track A and independent on-top Track B
 
-**Counterfactual:** compare the exact same user run, available transcript/evidence and permissions across (a) shipped same-model Advisor, (b) original PR's proposed independent model on its **actual** code when lawfully run, and (c) a speculative new constructor. If (b) can fulfill the user outcome and (c) changes only model-selection plumbing, it does **not** justify a separate C construction. A distinct S3* witness additionally needs genuinely complementary evidence access and a lawful return, which neither model identity nor a proposed PR proves.
-
-**P1:** only source-native analysis and qualified tests of the original PR if independently requested. **P2: NONE.** Current decision **NO_GO** for another implementation.
-
-## 2. Shipped baseline, original issue/PR and remaining uncertainty
-
-| Port / evidence | First-party current-HEAD path | Status and distinction |
-| --- | --- | --- |
-| Reviewer trigger and original context | [`extensions/advisor/index.ts`](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/extensions/advisor/index.ts) | **SHIPPED:** schedules a bounded model review for an admitted run; retains session's model |
-| Developer-configured review controls | [`extensions/advisor/openclaw.plugin.json`](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/extensions/advisor/openclaw.plugin.json) | **SHIPPED:** review frequency/instructions; `model` is **not** in the current manifest |
-| Observation and corrective return | [Advisor reference](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/docs/plugins/reference/advisor.md) | **SHIPPED:** tool-free fork, `NO_CHANGE/CORRECTION` contract and bounded active-run steer, under original session permissions |
-| Cross-model selector | [#184787](https://github.com/openclaw/openclaw/issues/184787) · [PR #196242](https://github.com/openclaw/openclaw/pull/196242) | **OPEN_PR at prior first-party read**; raw REST state refresh rate-limited; PR head `cfd89afbe771bfdbc69cf5c7be203a2cd85e327f`; do **not** count as shipped |
-| S3* independence and deployed effect | No current observed live evidence in this case | **UNVERIFIED:** independent decision rights, complementary direct evidence, deployable corrected outcome and runtime quality |
-
-One GitHub API re-read returned HTTP 403 (anonymous rate limit) during this research; the prior GitHub PR read reported `open`. Avoid converting incomplete live readback into a fresh status claim. The PR's own description reports **mocked smoke** but not complete native tests or live provider/Gateway validation; these limitations are not a reason to create a duplicate PR.
-
-**Rights preflight:** [MIT license](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/LICENSE); [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/8c0d54b97fe5d79b4c93591fb8794250ce7a198c/CONTRIBUTING.md) directs architectural features to an Issue/Discord first and normally prefers third-party plugins. Human-only attestation, AI disclosure and CLA/DCO requirements need confirmation *before* any later third-party PR. Verified parent-matched OpenSiro fork `opensiro-contributions/openclaw` and `ACTIVE / ALLOW` on `opensiro/meta` at intake; this only supports authorized case metadata, not public proposals.
-
-
-## 2A. Mandatory parallel A+B source-native constructor review (Upstream v0.17.0)
-
-**Evaluation object and scope:** A new OpenSiro-authored first-party independent model-review feature over the admitted active user run, only insofar as it adds demonstrable value beyond original #184787 and PR #196242. **NO_GO** is limited to this contribution, not all OpenClaw S3* research.
-
-**Protocol:** [Upstream v0.17.0](https://github.com/opensiro/upstream/blob/0231dfd238f8fa6cdb779393c3c5f087f7599f7c/PROTOCOL.md). **Requalification observation:** 2026-11-19.
-**Source recheck:** [openclaw/openclaw@af59c375011bbff913cf6d5ffc950da22eaaf0d6](https://github.com/openclaw/openclaw/commit/af59c375011bbff913cf6d5ffc950da22eaaf0d6); [current accepted Index](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md) still contains the accepted blob e1d560bc5b28d90323b15f5f1af6a5293c614b45, historical source review_ref 387da5edaa9d6c6cfcfc15e167fe2e46d8647d86. Earlier frozen observations in this case remain intact.
-**Live original overlap readback:** [Issue #184787](https://github.com/openclaw/openclaw/issues/184787) OPEN; [PR #196242](https://github.com/openclaw/openclaw/pull/196242) OPEN at head cfd89afbe771bfdbc69cf5c7be203a2cd85e327f; dependency [PR #196240](https://github.com/openclaw/openclaw/pull/196240) OPEN. These are **proposals**, not shipped code or verified native runtime tests.
-
-| A — original native work / first-party evidence | Coverage and status | B — independent contribution-on-top hypothesis | Incremental user outcome and falsifier |
+| Necessary source-specific witness | Track A current first-party source or original proposal | Track B minimal missing construction | Falsifier |
 | --- | --- | --- | --- |
-| [Shipped Advisor](https://github.com/openclaw/openclaw/blob/af59c375011bbff913cf6d5ffc950da22eaaf0d6/extensions/advisor/index.ts) and [manifest](https://github.com/openclaw/openclaw/blob/af59c375011bbff913cf6d5ffc950da22eaaf0d6/extensions/advisor/openclaw.plugin.json) | A tool-free review fork uses the current session model; NO_CHANGE/CORRECTION may steer its active run. No shipped model selector in the manifest | **Reuse unchanged:** no further OpenSiro product implementation | Native default already provides same-model oversight; no incremental task or S3* C witness follows from merely reusing it |
-| [Original Issue #184787](https://github.com/openclaw/openclaw/issues/184787), [PR #196242](https://github.com/openclaw/openclaw/pull/196242), prerequisite [#196240](https://github.com/openclaw/openclaw/pull/196240) | All OPEN; original PR proposes a separate model, host model-policy checks and bounded transcript. Explicitly no full-context or live correction-quality proof | **Integrate/extend:** consider provenance-preserving review evidence or a measurable later-effect receipt *in addition to* the original model-selection PR | **NOT_EVIDENCED**: original PR covers the narrow other-model task. No independently supported operator case, missing first-party port or matched native test yet shows an additional benefit |
-| [Closed Advisor windowed-context RFC #175708](https://github.com/openclaw/openclaw/issues/175708) and [open fork failure #193891](https://github.com/openclaw/openclaw/issues/193891) | Reported context/trigger pressure, and a separate native runtime defect; neither is a shipped autonomous S3* constructor | **Adjacent:** independently evidence-grounded corrective review with scoped direct tool receipts; or original-owner repair of fork failure | **NOT_EVIDENCED** for adjacent S3* C without a real operator counterfactual, trusted evidence access and later run effect. Fork failure is REPAIR_ONLY |
-| [Separate OpenSiro Auto Review handoff case](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-autoreview-handoff-20261119/README.md) and [original #201834](https://github.com/openclaw/openclaw/issues/201834) | Distinct timer/handoff bug with independent fork-local case and original issue | **Reuse existing case**, no duplicated proposal | **NOT_APPLICABLE** to this specific Advisor model-selector decision; do not merge independent work units |
+| Settled-result review trigger | [Advisor index.ts](https://github.com/openclaw/openclaw/blob/599bc4222a48594445c7d531c063be828be3482a/extensions/advisor/index.ts) tracks started/resolved tool calls and schedules review after resolution | Reuse current event subscription and stable run identity for a bounded evidence window; do not send incomplete results | Evidence cannot be lawfully accessed or reviewed at a stable version |
+| Independent configurable audit actor | [Advisor manifest](https://github.com/openclaw/openclaw/blob/599bc4222a48594445c7d531c063be828be3482a/extensions/advisor/openclaw.plugin.json) exposes triggers/instructions, not model selector. [Issue #184787](https://github.com/openclaw/openclaw/issues/184787) OPEN, [PR #196242](https://github.com/openclaw/openclaw/pull/196242) OPEN proposes model selection with host policy | Compose an independently configured trusted audit decision path in Advisor. Reuse any upstream accepted model-selection interface rather than duplicating open PR | Current model picker already has independently binding run-wide audit / nothing extra is chosen |
+| Enforced later operation | Advisor [steerActiveRun](https://github.com/openclaw/openclaw/blob/599bc4222a48594445c7d531c063be828be3482a/extensions/advisor/index.ts) sends CORRECTION as advice; no plugin-supplied binding pause confirmed | Small explicitly host-owned run/step admission hook, version-checked HOLD/CONTINUE result before **next** tool/turn, with parent policy precedence and expiry | Holding work requires unauthorized S5 escalation or no first-party admission boundary can be implemented |
+| Actual feedback for audit closure | [Gateway audit docs](https://github.com/openclaw/openclaw/blob/599bc4222a48594445c7d531c063be828be3482a/docs/gateway/audit.md) keep metadata-only facts; approvals retain native owners | Return actual hold applied/denied/expired, parent resume decision and later authorized task result to audit actor without inventing content ledger or approval | No feedback path; only text warning, unsafe immediate execution, or false success |
 
-**Native counterfactual and construction sufficiency:** Track A distinguishes shipped Advisor from OPEN_PR implementation (never count the latter as shipped). Track B independently considers reuse, integrative extension and adjacent independent corrective audit. To qualify a further first-party C constructor, a real developer-supplied autonomous reviewer must have complementary trustworthy evidence access; options including hold and correction; enforced original-run rights; bounded, attributable decision state; and later operative effect. Neither a speculative extra model setting nor the existing Issue is such a witness.
+**Native alternatives:** (A) unchanged bundled Advisor for advice and manual review; (B) native original model-picker #196242 once independently accepted and tested; (C) narrow existing exec Auto Review for exec only. The proposed C is intentionally an optional run-wide complementary decision/return, not a second generic review framework or duplicate #196242.
 
-**Rejection and tests:** Reuse only has zero incremental product effect. The proposed on-top evidence/feedback integration may be different from PR #196242, but remains **NOT_EVIDENCED** pending a real source-linked user case and verified missing port. An adjacent direct-evidence audit would require permission and tool-evidence boundary checks, positive review and changed later-run behavior; no such test or native implementation is claimed. Original #193891 is repair work and #201834 belongs to a separate case.
+**Original overlap facts at the time of review:** [#196242](https://github.com/openclaw/openclaw/pull/196242) OPEN / UNMERGED at cfd89afbe771bfdbc69cf5c7be203a2cd85e327f, dependent [#196240](https://github.com/openclaw/openclaw/pull/196240) OPEN / UNMERGED at 6eae1f6b169d964735d9c01432e4ce553d83b743. [#193891](https://github.com/openclaw/openclaw/issues/193891) OPEN fork-failure report; [#196230](https://github.com/openclaw/openclaw/issues/196230) OPEN nested trigger inflation; [#198097](https://github.com/openclaw/openclaw/issues/198097) OPEN persistent correction injection report. Original Issues are evidence of native ownership and possible fragility, not a maintainer product veto and not an excuse to duplicate fixes.
 
-**P0:** no qualified new implementation. **P1:** original PR tests/CI, permission negatives, real-model Gateway run and documented model-identity, correction and cancellation outcomes *only under a future separately authorized engineering task*. **P2: NONE.** **Terminal NO_GO now only for the proposed duplicate model selector;** new evidence may reopen another bounded evaluation object. Original maintainer PR ownership, S3/S5 rights, Index semantic ownership and publication gates remain unchanged. **NOT_TESTED; NOT_MEASURED.**
+## 3. Smallest first-party constructor and actual authority chain
 
-## 3. Conditional S3* construction test — NOT an admitted new feature
+| First-party component | Current native behavior | Proposed minimal integration | Decisive owner, effect and return |
+| --- | --- | --- | --- |
+| extensions/advisor/index.ts + Advisor plugin metadata | Session-owned review schedule, forked model decision and nonbinding steer | Allow a trusted developer-configured independent reviewer returning typed CONTINUE, HOLD_FOR_OPERATOR, CORRECT_AND_REAUDIT for an exact settled run/step snapshot; no tool authority in review fork | Independent reviewer decides complementary audit; timestamped verdict and explicit reason return to the host |
+| Existing Gateway agent execution admission / host approvals | Execution respects current caller, tool policy and operator-owned approvals | One opt-in native run-versioned admission/hold bridge, scoped only to that Gateway run; preserve existing policy and prevent stale/ended-run holds | Gateway validates authority and executes only a lawful hold or continue before a later step; parent alone approves resume |
+| Existing run status, audit and result channels | Metadata-only audit and terminal host approval receipts; source-backed owner boundaries | Return exact applied / rejected / expired hold + resumed task success/failure to the independent reviewer under permitted visibility | Reviewer learns whether its decision changed later work; no fabricated approval or reinterpreted audit ledger |
 
-No new code ports are proposed for implementation. If a genuinely different operator task is later established, the minimal acceptable S3* contract would need:
+**Physical ports not prescriptive.** The minimal missing link is a host-enforced, first-party, narrowly scoped later-step hold and real feedback. Existing advisor events/review scheduling are reused. Selecting an independent model without this link is not enough; adding a universal new supervisor would be unnecessarily broad. The strong positive witness requires the combination and tests, not a text sketch.
 
-| Independent property | Conditional required witness | Falsifier |
-| --- | --- | --- |
-| Distinct review and evidence access | Separate reviewer actor gets meaningful complementary observations of the real active run, under configured permissions | Merely replaying same-model transcript, hardcoded evaluation or lacking independent observations |
-| Lawful review choice | Reviewer weighs real alternatives `hold/no-change` vs bounded correction based on evidence and scope | Code unconditionally routes a predetermined correction or bypasses policy |
-| Enforcement and feedback | Existing run receives the authorized steer, effect observed in later tool/task behavior with provenance | Review emits text/log only, or after-run correction is dropped |
-| Negative authority path | Denied models, expired runs, canceled review, unavailable tools, prompt injection and missing credentials are safe and explicit | Fail-open execution, hidden fallback, forged principal or silent privilege escalation |
+**Dependency order:** verify SDK/host policy capability and maintainer-owned support path → implement opt-in adapter with explicit parent authorization and immutable run-bound evidence → prove two different lawful audit choices and actual Gateway return → compare against unchanged Advisor. No original code changes in this PLAN_ONLY case. P0/P1/P2 values are owned by the [roadmap.md](roadmap.md) receipt, not independently redefined here.
 
-This matrix is a **hypothetical future acceptance test**, not a claim that OpenClaw has or lacks all of these interfaces and not a promised reusable constructor. Current native Advisor and PR must first be tested on matching conditions. No independently supported new capability, implementation owner or concrete additional API is established.
+## 4. Scope, options and stop conditions
 
-## 4. Priority and dependencies
+Proposed P0 S3* bounded Advisor complementary audit. P1 rights checks, source-specific native tests and accurate overlap readback. P2 NONE. No new S1, S2, S3, S4, S5 or cross-project controller.
 
-- **P0 S3*:** **NO_GO** for parallel model-selection implementation; do not publish a duplicate of original #184787 / PR #196242.
-- **P1 evidence only:** verify original PR's current status/head, source-diff correctness, real model permission enforcement, request transcript scope, cancellation, meaningful independent oversight and active-run feedback *if separately commissioned*.
-- **P2:** **NONE**; do not add mandatory S3, S4 or S5 features.
+**Option 1:** same-model Advisor, operator review unchanged (smallest native path; no C claim). **Option 2:** original #196242 reviewer model only (not shipped; independent selection without binding closure). **Option 3:** optional trusted reviewer verdict plus Gateway-owned next-step hold, versioning and feedback (strongest bounded C candidate). **Option 4:** decline feature entirely if source-native policy, privacy, integration or measured task outcome does not justify adoption; maintainer controls that product choice independently of architecture feasibility.
 
-## 5. Primary future native acceptance cases (not run)
+Stop architectural GO if shipped native C already fulfills the same decision/authority/return, no authorized plugin host hook can enforce next-step hold, the reviewer cannot independently choose, material evidence is legally unavailable, or real later feedback is impossible. Stop any outward implementation/publication until exact authorizations are provided, regardless of the architectural result.
 
-- **AC-01 Positive:** original-native separate-model reviewer receives permitted direct evidence, returns a substantive correction, and subsequent active-run behavior reflects a lawful steer.
-- **AC-02 Counterfactual:** same task, same scoped source and authority compared to shipped Advisor and PR's implemented flow; any duplicate pathway demonstrates independently material additional capability before admission.
-- **AC-03 Missing actor / bad credentials:** no invented cross-model S3* ownership or fallback when separate reviewer cannot be configured.
-- **AC-04 Security negatives:** denied model or principal cannot steer; canceled or completed run cannot accept late correction; advisory output does not override S3/S5 authority.
-- **AC-05 Regression:** default Advisor's same-model behavior is preserved; failure returns explicit evidence, no silent fallback or fake successful review.
+## 5. Proposed future native acceptance, not executed
 
-Required real tests would use original-native `pnpm test:extension advisor` plus relevant plugin contracts and a host-authenticated Gateway run where permitted; **NOT_TESTED** here.
+Current original has pnpm scripts and Vitest tests, but no new test was run in this review. Future tests belong with actual first-party edited files; **native tests NOT_RUN**.
 
-## 6. Falsification, evidence owners and decision
+| Future test derived from OpenClaw path | Source-based native setup | Expected operational result | Falsifier |
+| --- | --- | --- | --- |
+| Positive independent HOLD | Opt-in Advisor enabled, controlled settled tool outcome and exact run/step; plugin event and Gateway admission | Before next tool starts, authorized version-checked hold is enforced; operator resolves; reviewer receives actual result | Advice only / next operation already ran / fabricated approval |
+| Independent CONTINUE | Same active run and evidence, reviewer selects different lawful option | Next operation proceeds under unchanged Gateway policy; feedback records continued outcome | Gateway hard-codes hold regardless of reviewer |
+| Missing/stale/revoked | No reviewer, expired run version, ended session or parent denial | No unauthorized hold or resume, baseline fail-safe behavior, explicit not-applied receipt | Privilege escalation, stale effect or silent success |
+| Unsettled tool call / review cancellation | Pending tool event and session reset using Advisor scheduler | No audit decision made from synthetic/missing outcome; cancelled review cannot act | Provisional result treated as final |
+| Matched original-native comparison | Identical permitted task with shipped Advisor, compare proposed opt-in path | Observe whether binding independent decision changes an authorized later outcome; log incremental cost | Same lawful outcome with unchanged Advisor and no extra closure |
 
-**Final operator decision: NO_GO.** Existing native feature plus an already-open targeted PR covers the specific proposed P0 without any proven differentiated task. The historical `S3*=—` is not a mandate to construct `C`. Do not conflate an unmerged PR with shipped capabilities or any future Index regrade. A material new target could be reopened only with a distinct real operator action, matched cheaper-native counterfactual, original-maintainer overlap review and lawful authority.
+Cost, latency and qualitative comparison: **NOT_MEASURED**. This is an acceptance sketch, not a passing test suite.
 
-**Evidence owners:** original repository / maintainers own shipped code, Issue/PR and merge/admission; Index owns accepted assessment and re-review; OpenSiro fork owns this plan-only research note. No native test, public fork Issue, third-party Issue/PR or product code is represented as delivered. **Cost: NOT_MEASURED.** Prepared with AI assistance.
+## 6. Verdict, historical attribution and next permitted action
+
+**Proposal-stage decision:** GO
+**Research disposition:** NEEDS_EVIDENCE
+
+Evidence for first pass [sealed before reading history](https://github.com/opensiro/upstream/issues/58#issuecomment-7045525751). Earlier same case at [fork@67e1d5d](https://github.com/opensiro-contributions/openclaw/blob/67e1d5dbf58accf8b0f6cf445caf198294144c53/.opensiro/issues/s3star-advisor-review-20261119/constructor-sufficiency.md) judged duplicate reviewer-model selection NO_GO, and did not establish direct-evidence binding audit. That NO_GO remains valid for that *narrow native duplicate*. The current v0.18.1 review changes only the scoped architectural conclusion for a clearly missing binding complementary audit path, not the preexisting model selector, separate direct-evidence/AutoReview cases, or the historical assessment.
+
+The source of truth for official grades is the Index; upstream original maintainers own any feature adoption and implementation; the [roadmap.md](roadmap.md) receipt owns structured case result. Developer and operator may evaluate actual constraints/tests under a separately authorized task. Internal fork case metadata ACTIVE / ALLOW only; external public issue/PR/comment NOT_PUBLISHED and not authorized. AI-assisted research disclosed.
