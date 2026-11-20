@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "20261120T164722Z--openclaw-s4-wave4-v0181",
+  "recorded_at": "2026-11-20T16:47:22Z",
+  "actor": "OpenSiro ChatGPT agent (owner-directed)",
+  "kind": "DECISION",
+  "case_id": "s4-compatibility-transition-20261118",
+  "decision": "GO",
+  "research_disposition": "NEEDS_EVIDENCE",
+  "scope": "Upstream #58 Wave 4, current v0.18.1 native-specific architectural S4=C constructibility only; hypothetical PLAN_ONLY, no product implementation",
+  "previous_decision": "2026-11-19 NO_GO retained at fork commit 27524e961d4bf2243197aa536441cba10718730b",
+  "source_original_sha": "2aca1a1c1595e25d3cdb0bc7ce098bdcc92efb87",
+  "accepted_index_blob_sha": "e1d560bc5b28d90323b15f5f1af6a5293c614b45",
+  "evidence_urls": [
+    "https://github.com/opensiro/upstream/issues/58#issuecomment-7045124854",
+    "https://github.com/openclaw/openclaw/commit/2aca1a1c1595e25d3cdb0bc7ce098bdcc92efb87",
+    "https://github.com/openclaw/openclaw/issues/131897",
+    "https://github.com/openclaw/openclaw/issues/159743"
+  ],
+  "meta_parent_sha": "27524e961d4bf2243197aa536441cba10718730b",
+  "external_publication": "NOT_PUBLISHED",
+  "native_tests": "NOT_RUN",
+  "structural_validator": "PASS",
+  "next_action": "No automatic implementation or publication; optional evidence-backed native S4 test proposal remains with original maintainer."
+}
