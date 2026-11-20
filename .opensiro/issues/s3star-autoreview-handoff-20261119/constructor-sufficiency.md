@@ -1,88 +1,106 @@
-# OpenClaw — S3* Auto Review handoff: independent AI/developer decision contract
+# OpenClaw — source-native S3* AutoReview quality-action contract
 
-**PLAN_ONLY / DECISION_READY · terminal NO_GO for speculative S3*=C**. This is the separate technical layer of [the Human Issue](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-autoreview-handoff-20261119/issue.md), not a second public Issue. Same historical starting profile and P0/P1/P2.
+**Canonical storage:** opensiro-contributions/openclaw@opensiro/meta:.opensiro/issues/s3star-autoreview-handoff-20261119/constructor-sufficiency.md
+**Level 1 / Human decision Issue:** [issue.md](issue.md).
+**Canonical decision receipt:** [roadmap.md](roadmap.md) owns all historical states, target and decisions; Human contains the single combined six-function table.
+**Stage:** PLAN_ONLY / HYPOTHESIS → PROPOSAL-STAGE; **DRAFT — NOT PUBLISHED**; no code or tests run.
 
-## Function-specific scope, accepted evidence and rights
+## 1. Function-specific construction boundary and methodology checks
 
-**Accepted historical assessment (not a current-HEAD regrade): S1=A · S2=C · S3=C(P) · S3*=— · S4=— · S5=—.** [Pinned Index](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md); reviewed 2026-09-16 at original `387da5edaa9d6c6cfcfc15e167fe2e46d8647d86`, assessment blob `e1d560bc5b28d90323b15f5f1af6a5293c614b45`, Profile 0.2.1, assessment procedure 0.3.1. Current source [`41bdde2111dd7031c93b47c57d7dad2e56bb0f5f`](https://github.com/openclaw/openclaw/commit/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f) observed 2026-11-19. Review age 64 days warrants a separate source-pinned Index re-review recommendation, never silent reinterpretation of the accepted vector.
+**Source and mode boundary:** Original openclaw/openclaw@1a7f34ffd7873e2b3ddb90073fc1220a852cf741 (2026-11-20); first-party Gateway agent/execution runtime. Narrow mode: explicitly opt-in sandbox coding agent using bundled [AutoReview](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/extensions/autoreview/src/tool.ts) before one specified host-mediated Git publication operation. External GitHub maintainer review, canonical helper's separate repository, third-party model provider and non-mediated execution paths excluded.
 
-| Function | Decisive organizational scope |
-| --- | --- |
-| S1 | Existing autonomous agent work |
-| S2 | Composable agent/session coordination |
-| S3 | Current whole-deployment control and parent-approved changes, preserve existing C(P) |
-| **S3*** | Requires sufficiently independent complementary audit evidence, a distinct accountable judgment/choice, authorized correction and later operational feedback |
-| S4 | External future adaptation is not the handoff bug |
-| S5 | Ultimate legitimate policy cannot be granted by a reviewer or prompt |
+**Target transition:** S3*=— -> S3*=C
 
-## 1. Boundary and actor counterfactual
+**Six-function dependencies (S1/S2/S3/S3*/S4/S5):** See six dispositions in [receipt](roadmap.md): S1 performs agent work; S2 communicates/coordinates sessions; S3 host execution/parent approvals retain lawful current-control rights; independent S3* candidate-quality reviewer selects hold/allow before the controlled effect; S4 not required; S5 original operator/maintainer keeps ultimate authority. No automatic new S5 actor.
 
-Current original [`41bdde2111dd7031c93b47c57d7dad2e56bb0f5f`](https://github.com/openclaw/openclaw/commit/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f), observed 2026-11-19. Include Gateway, installed bundled Auto Review and process/Code Mode runtime; canonical helper `openclaw/agent-skills` is a separately source-owned executable dependency. External GitHub reviews, maintainer organization, model vendor and the operator are not automatically OpenClaw's autonomous S3* function.
+**Function witness:** HYPOTHETICAL disturbance: candidate changed after review or reviewer reports uncorrected risk, but S1 agent requests otherwise authorized push. Separately configured quality reviewer chooses accepted versus hold with validated same-candidate report. Host-owned [before_tool_call policy](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/docs/plugins/hooks/tool-policy.md) and native exec approval enforce an exact action; rejection/success is observed by agent in later work.
 
-[Open #201834](https://github.com/openclaw/openclaw/issues/201834) records the observed race: the helper deadline begins at request publication; a new reviewer process gets its own full timeout on subsequent launch; helper may retire exchange before the subprocess completes/submits. Late submit may replace a helpful timeout with `FileNotFoundError`. This research independently inspected source and source-based issue discussion, but **did not rerun the reported runtime reproduction**.
+**Counterfactual owner test:** Remove independent reviewer while leaving AutoReview report, native exec safety/risk reviewer and parent approval. A manually permitted push still occurs without automatic candidate-quality choice; replacing the proposed reviewer with a fixed static bool is not evidence of S3* C.
 
-**Counterfactual:** remove a new composable S3* audit agent while keeping a native shared deadline, process-settlement guard and proper failure propagation. The same user outcome can still be delivered. Thus existing evidence does not establish material new independent-audit decision capability to construct.
+**Possible methodological negative control:** Existing manual AutoReview/human review is legitimate; local S5 and prospective S4 construction need not be mandatory.
 
-## 2. First-party current source, open issues and competing PRs
+**Contributor / maintainer priorities:** [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/CONTRIBUTING.md) requires feature discussion; interest in this exact construction NOT_STATED.
 
-| Element | Source/status | Meaning |
-| --- | --- | --- |
-| [Bundled Auto Review](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/extensions/autoreview/src/tool.ts#L303-L480) | SHIPPED at pinned HEAD | `helperRun`, `runCommandWithTimeout`, `submitResponse`, cleanup; review result handoff is timing-sensitive |
-| [Process runner](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/src/process/exec-runner.ts#L662-L676) | SHIPPED | True subprocess completion distinct from terminal-looking stdout |
-| [Code Mode bridge](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/src/agents/code-mode-controller-source.ts#L369-L385) | SHIPPED | Caller error classification; producer must not lose true timeout |
-| [Canonical helper](https://github.com/openclaw/agent-skills/blob/3cc834ceec0410c4ff37c09e5b81c91e65fc9fc9/skills/autoreview/scripts/autoreview#L8856-L8872) | Separate repo SHIPPED | Native request-to-ready timeout and exchange cleanup |
-| [#201834](https://github.com/openclaw/openclaw/issues/201834) | OPEN | Defect report and maintainer-review advisory, not a merged fix |
-| [PR #173455](https://github.com/openclaw/openclaw/pull/173455) | MERGED | Restricted reviewer introduction |
-| [PR #200743](https://github.com/openclaw/openclaw/pull/200743) | MERGED | Different outer watchdog liveness |
+## 2. Source-pinned baseline and parallel native Track A / on-top Track B
 
-**Rights preflight:** [MIT](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/LICENSE), [CONTRIBUTING](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/CONTRIBUTING.md): native bug fixes need tests, link source issue and respect original review/security gates; architecture features require Issue/Discord before PR. CLA/DCO personal legal formalities must be verified for an actual submission, not inferred from MIT. Matching verified fork `opensiro-contributions/openclaw`, `opensiro/meta` owner ACTIVE/ALLOW at intake; does not authorize public fork Issue or external communication.
+**Original native workflow:** Sandbox agent prepares Git diff. Shipped [AutoReview tool](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/extensions/autoreview/src/tool.ts) uses canonical helper and restricted host reviewer, returns complete validated report; agent independently executes later authorized Git operation or asks human/maintainer. No first-party link requiring a same-candidate independent quality outcome before later action was established.
 
-## 2A. New-protocol independent Track A / Track B / incremental sufficiency
+**Closest existing solution:** [AutoReview](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/docs/tools/autoreview.md) + manual check + host approval + GitHub maintainer [PR review](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/docs/reference/pull-request-review-flow.md).
 
-**Previous persisted decision (historical, unchanged):** [`0045643f66ec82b556ef2ba1326484b00098a2e6`](https://github.com/opensiro-contributions/openclaw/commit/0045643f66ec82b556ef2ba1326484b00098a2e6) evaluated a new S3* controller against original `08b4ac92c1978f1f68dd78b53e7879ba24363c1b` and concluded **NO_GO**. It remains provenance, not an automatic veto for other native improvements.
+**Relevant original Issues/PRs:** [#201834](https://github.com/openclaw/openclaw/issues/201834) OPEN is result-handoff timeout bug, separate from this candidate gate; [#172336](https://github.com/openclaw/openclaw/issues/172336) OPEN was native review entry request; [#173455](https://github.com/openclaw/openclaw/pull/173455) MERGED supplies shipped reviewer path, [#175529](https://github.com/openclaw/openclaw/pull/175529) and [#200743](https://github.com/openclaw/openclaw/pull/200743) MERGED fix lifetime/watchdog; [#172345](https://github.com/openclaw/openclaw/pull/172345) CLOSED UNMERGED is not shipped proof; [#156804](https://github.com/openclaw/openclaw/pull/156804) OPEN is maintainer guidance not native enforcement. PR search was bounded, no exhaustive negative claim.
 
-**New bounded v0.17.0 review (2026-11-19 UTC):** original `41bdde2111dd7031c93b47c57d7dad2e56bb0f5f` and [accepted Index](https://github.com/opensiro/vsm-harness-index/blob/394ce776e6945115891b8f7cc459f5a7f7d7aa39/assessments/op/openclaw.md) read anew. **Evaluation object** = *additional independently composed S3* controller / durable audit capability beyond the existing Auto Review handoff fix*. **Current decision** = **NO_GO** on that bounded extra object; **native deadline/diagnostic repair remains a qualified original issue lead**, subject to its own rights and review. **Verdict evolution:** unchanged for the controller, materially clarified boundary for native contributions.
+| Required S3* link / actor outcome | Track A source status | Track B smallest native addition | Falsifier |
+| --- | --- | --- | --- |
+| Independent candidate observation | Shipped [AutoReview source](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/extensions/autoreview/src/tool.ts) returns restricted reviewed result | Bind eligible fresh result, candidate Git identity and separate independent judgment to proposed action | A first-party review-permit already exists |
+| Discretionary hold/allow | Shipped [exec auto-reviewer](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/src/agents/exec-auto-reviewer.ts) checks command safety, **not** candidate quality | Developer-composed separate quality reviewer picks among outcomes; not a fixed threshold | No actual decision owner |
+| Protected effect/return | Shipped [before_tool_call](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/docs/plugins/hooks/tool-policy.md) can terminal-block and return reason; exec approvals remain | Narrow host-owned gate checks matching one-time evidence and exact Git action, denies old/invalid, returns denial or true effect to S1 | Alternate egress bypass remains or host authorizations escalated |
 
-[Upstream v0.17.0 source](https://github.com/opensiro/upstream/blob/0231dfd238f8fa6cdb779393c3c5f087f7599f7c/PROTOCOL.md) · [re-run cohort #58](https://github.com/opensiro/upstream/issues/58). This case was created **after** #58's frozen 22-operational-case inventory and is **not** counted as its completed roster item. The comparison applies the same per-case two-track standard without rewriting that baseline.
+**On-top distinctness:** Prior NO_GO [same-case historical receipt](https://github.com/opensiro-contributions/openclaw/blob/51ba426d95e2f65e0274d48e6f333439b7c19df7/.opensiro/issues/s3star-autoreview-handoff-20261119/roadmap.md) rejected general auditor attached to the **#201834 native timing fix**. Current independent scope is a different *post-review exact protected Git action*, not a justification to undo earlier native-repair NO_GO.
 
-| Path | Existing original-native source and coverage (Track A) | Independently evaluated OpenSiro choice (Track B) | Incremental user result | Falsifier / result |
-| --- | --- | --- | --- | --- |
-| **Reuse unchanged** | Shipped [Auto Review orchestration](https://github.com/openclaw/openclaw/blob/41bdde2111dd7031c93b47c57d7dad2e56bb0f5f/extensions/autoreview/src/tool.ts#L361-L464), canonical [helper handoff](https://github.com/openclaw/agent-skills/blob/3cc834ceec0410c4ff37c09e5b81c91e65fc9fc9/skills/autoreview/scripts/autoreview#L8856-L8872), and already-open [original #201834](https://github.com/openclaw/openclaw/issues/201834) | Reuse original Issue and maintainer review; make no new product change | Avoid duplicate ticket/PR, retain native issue evidence and coordination | **APPLICABLE, no new feature:** existing timeout failure persists; reusing unchanged does not itself restore successful result delivery |
-| **Integrate/extend native handoff** | Plugin invokes a separate helper and resets the reviewer timeout on launch; helper may expire before submit, with wrong final diagnostic. [Merged reviewer PR #173455](https://github.com/openclaw/openclaw/pull/173455) and [merged outer-watchdog PR #200743](https://github.com/openclaw/openclaw/pull/200743) do not close this per-pass race | On top of those shipped primitives: single request-to-submission deadline ownership, phase-preserving error return, and matching real helper/plugin regressions using existing run/pass identifiers; maintain helper source ownership | A completed review is delivered once, or the actual timeout is preserved instead of a misleading file error | **SOURCE-BACKED native repair lead, but already within the intent of #201834**; no separately justified S3* audit decision owner. Falsified as extra on-top feature if the accepted native fix already supplies that same behavior |
-| **Adjacent durable audit receipt** | Existing response already contains `run_id`, pass and prompt digest; existing failure is at submission/cleanup, not necessarily downstream audit history | Add a durable, cross-run reviewer-outcome/provenance receipt to later S1/S3 inspection using authorized storage and retention | Could enable post-run attribution beyond a one-pass error response | **NOT_EVIDENCED:** no first-party user demand for cross-run durability, migration/retention scope or allowable decision right. Reject if native stage-specific diagnostics suffice |
-| **New independent S3* constructor** | Restricted reviewer is a shipped tool; [separate fork Advisor-case](https://github.com/opensiro-contributions/openclaw/blob/opensiro/meta/.opensiro/issues/s3star-advisor-review-20261119/README.md) covers other review-model scope. A reviewer tool is not an independent deployment-level S3* actor | Developer-composed independent auditor choosing permitted `hold`/corrective action with protected permissions, later enforced S1/S3 effect and feedback | Would provide a new organizational corrective decision only if a real unmet operator task requires it | **NOT_EVIDENCED:** no operator task, installed composition/authority or later corrective closure shown. If removing the new actor leaves the native repair outcome unchanged, the proposed C path fails materiality |
+**Source ambiguity / rights blockers:** Need prove exact host exec and Git command interception for one declared mode. Host Code Mode JavaScript wrapper is not automatically a protected inner shell operation. Alternate egress must be absent, externally denied or separately mediated. Prove candidate hash/expiry cannot be forged/reused. No rights or complete source coverage claimed.
 
-**Track verdict:** original [#201834](https://github.com/openclaw/openclaw/issues/201834) is a real **source-owned repair opportunity**, not a blanket veto against contribution. Our minimal integration hypothesis could be implemented *inside that existing Issue* after separately authorized engineering and maintainer coordination; it is **not** an independent VSM `C` construction target. Two distinct adjacent variants are rejected on current evidence, not claimed permanently useless. **New scoped decision = NO_GO for creating a separate S3* C constructor for this Auto Review handoff; not NO_GO for original-native bug work or the OpenClaw harness.**
+## 3. Minimal complete S3* first-party C construction
 
-**Function-specific counterfactual:** remove the proposed independent auditor while keeping the original-native repair and supported review process. The documented operator task (correct result or truthful timeout) is still achieved, so **additional S3* C is unqualified**. The native issue's patch would be a source-native repair, not an autonomy regrade. The distinct receipt alternative requires a separate data retention/authority case and positive downstream need before becoming P2.
+**Required property:** First-party developer can compose genuinely independent quality decision owner and connect it to enforceable later S1 Git action with status/denial feedback under unchanged parental policy.
 
-## 3. Why no supported new S3* C sufficiency path
+| Native component or port | Existing original | Smallest proposed edit / developer integration | Owner, effect and feedback |
+| --- | --- | --- | --- |
+| Candidate review outcome | [AutoReview implementation](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/extensions/autoreview/src/tool.ts) already validates reviewer and sandbox state | Expose host-validated, invocation-bound report/candidate descriptor and eligible independent hold/allow outcome, not model-supplied credentials | Independent developer-composed quality reviewer owns decision; host verifies provenance |
+| Protected action admission | [Tool policy hook contract](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/docs/plugins/hooks/tool-policy.md) permits terminal block/approval, original native exec approval | Host-owned exact candidate-hash-to-action binding, rechecking freshness, scope and requester before effects; no other egress in supported mode | Operator controls publication rights, reviewer further restricts, never grants rights |
+| Return to operation | Tool result/denial is returned to agent | Reflect actual denied/performed Git effect and repair reason to S1 and optional reviewer followup | Agent revises candidate or continues after actual successful action |
 
-A separate future S3* proposal would need these **logical** properties, none claimed as installed APIs: **A** independent attributable audit observation of an operational disturbance; **B** credible evidence/options including hold; **C** developer-composed autonomous auditor actually owning a complementary decision, independently and lawfully; **D** a first-party authorized correction/escalation bridge returning to S1/S3; **E** observable downstream action and later feedback to auditor. A timer, generic hook, code review report or another model name is not by itself A–E.
+**Native-specific design advice:** Reuse existing sandbox candidate capture, prepared pass digest and protected installed helper, preserve original runtime isolation. A before_tool_call check on the outer Code Mode JavaScript cannot claim coverage of indirect Git shell commands. Either identify and validate a deeper native gate or declare those paths unsupported and deny their egress by host policy. No generic reviewer supervisor.
 
-For #201834, no source-supported unmet independent organizational corrective decision beyond reliable transport was found. Proposed A–E would be extra complexity with unproven material operator benefit. A fix to handoff reliability cannot be counted as future S3*=C, nor can an unmerged issue/PR confer an Index grade.
+**Architectural C-sufficiency argument:** Candidate A — reuse AutoReview + first-party pre-tool hook to enforce independently chosen quality decision for one allowed host-exec Git operation, with sandbox digest and exact effect. Candidate B — a narrower dedicated host push API only if existing exec is unmediable, higher code/maintenance cost. Candidate C — GitHub branch protection/human maintainer review is valid parent governance, not first-party autonomous S3* C. Only A is P0 proposal; other candidates are falsifiers/alternatives, not implemented. Without whole path source proof, accepted grade remains unchanged.
 
-## 4. Priority and dependency verdict
+**Explicit non-goals:** No new S4 controller/S5 authority, no unrelated approval grant, no generic audit database, no forced PR, no fix to #201834 in this PLAN_ONLY case.
 
-**P0:** NO_GO; a new independent auditor C constructor is NOT QUALIFIED. **P1:** a distinct original-native bug lane under #201834 if separately authorized: coordinate canonical-helper/plugin single pass deadline, wait for real subprocess completion, preserve authoritative error through late submit/cleanup and Code Mode. **P2: NONE**. A native repair is not an automatically admitted P0 dependency. No S3 parent rights transfer, S4 mode, S5 policy agent or independent-reviewer runtime is created.
+**Implementation dependency graph:** P1 exact source action/candidate/runtime rights → P1 no-bypass freshness and legitimate owner checks → P0 review decision/action join → future matched positive/negative/compatibility native evidence. P2 NONE.
 
-## 5. Proposed native regression acceptance — NOT RUN
+## 4. Priorities, optional alternative and stopping rules
 
-| Case | Stimulus | Required result |
-| --- | --- | --- |
-| NR-01 | Four-second timeout, delayed reviewer process launch | Effective single bounded pass, truthful timeout stage |
-| NR-02 | Reviewer emits terminal JSON before actual exit | Must not accept incomplete process as success |
-| NR-03 | Successful process exit followed by late submit | Preserve helper timeout; no misleading file-not-found replacement |
-| NR-04 | Cancellation/multipass/cleanup | No false success, abandoned exchange or swallowed failure |
-| NR-05 | Code Mode bridge wraps timeout | Accurate cause and error phase visible |
-| NR-06 | Canonical helper contract changed | Canonical helper native-handoff tests on exact revised source |
+**P0 and P1:** Canonical [roadmap.md](roadmap.md) defines one opt-in independent S3* quality decision to exact authorized Git egress with feedback, and mandatory source/action/rights/freshness proof. These are not a second set of priorities.
 
-Original suggested local command: `pnpm test extensions/autoreview/src/tool.test.ts src/agents/code-mode.bridge.lifecycle.test.ts --maxWorkers=1`, plus separate helper-native tests if changed. **Tests not executed; no runtime proof or S3* ownership witness claimed.**
+**P2:** NONE; no separate S4, S5 or cross-session reviewer.
 
-## 6. Falsification, evidence ownership, authority
+**Alternative path:** Keep manual original AutoReview + human PR review and established exec approvals, particularly where required host boundaries cannot be proven.
 
-**NO_GO stands** while the cheapest native repair achieves the task or no distinct developer-composed complementary audit choice and corrective feedback is demonstrated. A future reopen needs source-backed operator demand, true independent audit decision owner, legal right to return a correction into actual running S1/S3 work, positive/negative/compatibility tests, later operational feedback and original maintainer context. A new Index assessment, if desired, is exclusively Index-owned and separately governed.
+**Stop:** Existing identical first-party completed S3* path, no genuinely independent quality decision, bypassable action or no lawful owner makes proposed constructor incomplete. Maintainer adoption is separate from architectural GO.
 
-## 7. Alternatives, cost and publication
+## 5. Future source-native acceptance — derive tests, do not copy a matrix
 
-Independent original-native repair; distinct evidence-supported Profile/Skills clarification; or a lawful domain-specific fork experiment. All require their own permissions. Compare like-for-like engineering/review/integration/maintenance costs; **NOT_MEASURED**. **Final NO_GO** for speculative C controller. Public fork GitHub Issue and external original Issue/PR/comment **NOT PUBLISHED**. No code, tests, contribution record or regrade.
+**Native test commands and entry points:** Original [AutoReview tests](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/extensions/autoreview/src/tool.test.ts) and [package.json](https://github.com/openclaw/openclaw/blob/1a7f34ffd7873e2b3ddb90073fc1220a852cf741/package.json) are first-party source entry points; select owning execution gate tests after investigation. Proposed CLI by standard repository conventions: pnpm test extensions/autoreview/src/tool.test.ts --maxWorkers=1. **NOT_RUN**; not a claim of validated runner execution.
+
+**Positive functional closure:** independent reviewer returns allow on exact clean candidate; one otherwise authorized Git egress is performed, true result returned to subsequent agent work.
+
+**Independent alternative (where applicable):** same authorized actor with reviewer hold sees blocked action and reason, reworks candidate; new digest requires re-review rather than stale reuse.
+
+**Negative authority and compatibility (where applicable):** missing/stale/revoked review, failed helper, changed source tree, host denial or alternative publication route must be blocked in selected opt-in mode. No-opt-in original path stays unchanged; reviewer cannot override parent.
+
+**Matched native alternative:** compare the same candidate under manual AutoReview/human review, including effort and failure behavior; no cost benefit claims without measurement.
+
+| Proposed case (NOT_RUN) | Native test seam / setup | Expected downstream effect and return | Falsifier |
+| --- | --- | --- | --- |
+| Allow | AutoReview result and host pre-tool protected Git action | One otherwise authorized effect; real status to S1 | Only a report, no action binding |
+| Hold | Independent reviewer chooses hold | No effect, meaningful repair reason to S1 | Static permission masquerades as S3* |
+| Stale | Change Git candidate after report | Deny until new review | Old report accepted |
+| No rights | Missing reviewer, revoked requester, failed pass, host approval deny | No publication; no policy escalation | Any fail-open write |
+| Compatibility | Opt-in disabled; indirect Code Mode / other egress | Baseline unchanged; unsupported egress excluded or denied | Bypass in claimed supported mode |
+
+No fixed test/port count imported from historical Paperclip templates. Native tests and external deployment not executed.
+
+## 6. Proposal verdict, falsification, evidence ownership and handoff
+
+**Proposal-stage decision:** GO
+
+**Research disposition:** NEEDS_EVIDENCE
+
+**Primary falsifier:** Exact protected action cannot be mediated with fresh independent outcome or user later-operation feedback, or a true equivalent first-party complete path already ships. **Validation state:** NOT_RUN; GO + NEEDS_EVIDENCE is an untested proposal, not shipped capability.
+
+**Ownership of truth:** Profile owns VSM semantics, Skills method, Index accepted historical grades, original OpenClaw owns code/maintainer policy, [roadmap.md](roadmap.md) owns this case. Independent source-only [first pass](https://github.com/opensiro/upstream/issues/58#issuecomment-7047187780) preceded reading prior negative case; NO_GO remains valid for old generic controller tied to #201834 handoff timing.
+
+**Cost status:** NOT_MEASURED. **Next permitted action:** Source/native tests only after separate engineering authority, before any original feature issue/PR obtain separate exact owner consent. Public fork GitHub Issue DRAFT — NOT PUBLISHED. AI assisted; no human review, code/test pass, grade change or maintainer buy-in inferred.
+
+**Human backlink:** [issue.md](issue.md).
+**case receipt:** [roadmap.md](roadmap.md).
+**AI disclosure:** Prepared with AI assistance; no product implementation, real tests or reviewer approval.
